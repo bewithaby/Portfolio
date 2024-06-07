@@ -8,9 +8,9 @@ var filled = false;
 // set up text to print, each item in array is new line
 var aText = new Array(
 "> Hello!", 
-"> My name is Ariel, I am " + age + " years old.", 
-"> I love programming and challenges.",
-"> I currently work as an Senior Android Platform Engineer at Volvo Construction Equipment.",
+"> My name is Abhilash",
+"> I am a seasoned software developer and Technical Project Manager.", 
+"> I am passionate about technology, research, and challenges.",
 "> If you want to know more about me, you are in the right place :)"
 );
 var iSpeed = 10; // time delay of print out
