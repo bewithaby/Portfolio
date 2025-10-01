@@ -9,7 +9,7 @@ var filled = false;
 var aText = new Array(
 "> Hello!", 
 "> My name is Abhilash Emmanuel",
-"> I am a Multidisciplinarian", 
+"> I am a Multidisciplinarian from India", 
 "> I am passionate about technology and creative design",
 "> My Trifecta: AI, Visuals, and PM expertise", 
 "> Want to know more? You’re at the right place :)"
