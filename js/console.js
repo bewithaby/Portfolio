@@ -14,7 +14,7 @@ var aText = new Array(
 "> My Trifecta: AI, Visuals, and PM expertise", 
 "> Want to know more? You’re at the right place :)"
 );
-var iSpeed = 10; // time delay of print out
+var iSpeed = 20; // time delay of print out
 var iIndex = 0; // start printing array at this posision
 var iArrLength = aText[0].length; // the length of the text array
 var iScrollAt = 20; // start scrolling up at this many lines
