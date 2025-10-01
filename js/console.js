@@ -11,7 +11,7 @@ var aText = new Array(
 "> My name is Abhilash Emmanuel",
 "> I am a Multidisciplinarian", 
 "> I am passionate about technology and creative design",
-"> My toolkit: AI, Visuals, and Project Management expertise", 
+"> My Trifecta: AI, Visuals, and PM expertise", 
 "> Want to know more? You’re at the right place :)"
 );
 var iSpeed = 10; // time delay of print out
