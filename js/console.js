@@ -9,9 +9,10 @@ var filled = false;
 var aText = new Array(
 "> Hello!", 
 "> My name is Abhilash Emmanuel",
-"> I am an AI Generalist.", 
-"> I am passionate about technology and creative design.",
-"> If you want to know more about me, you are in the right place :)"
+"> I am a Multidisciplinarian", 
+"> I am passionate about technology and creative design",
+"> AI, Visuals, and Project Management—my toolkit for impact", 
+"> Want to know more? You’re at the right place :)"
 );
 var iSpeed = 10; // time delay of print out
 var iIndex = 0; // start printing array at this posision
