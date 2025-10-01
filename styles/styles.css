@@ -1,25 +1,29 @@
 :root {
-    /* Refined Professional Palette */
-    --color1: #1a1f36;          /* Rich Navy (Sidebar BG, Headers) */
-    --color2: #2563eb;          /* Professional Blue (Buttons, Key CTAs) */
-    --color3: #334155;          /* Slate Gray (Body Text - High Readability) */
-    --color4: #3b82f6;          /* Vibrant Blue (Links, Hover, Progress) */
-    --color5: #f8fafc;          /* Off-White Background (Main Content BG) */
+    /* Premium Color Palette */
+    --color1: #0a0e27;          /* Deep Navy/Black (Sidebar BG) */
+    --color2: #6366f1;          /* Vibrant Indigo (Primary Accent) */
+    --color3: #1e293b;          /* Rich Slate (Body Text) */
+    --color4: #8b5cf6;          /* Purple Accent (Links, Highlights) */
+    --color5: #fafbfc;          /* Ultra Light Background */
 
-    /* Functional & Detail Colors */
-    --color-highlight: #f59e0b; /* Warm Amber (Metrics, Badges) */
+    /* Functional Colors */
+    --color-highlight: #f97316; /* Vibrant Orange (Metrics, Badges) */
     --color-text-subtle: #64748b; /* Cool Gray (Dates, Metadata) */
-    --color-border: #e2e8f0;    /* Soft Gray (Dividers, Card Borders) */
-    --color-card-bg: #ffffff;   /* Pure White for Cards */
-    --color-hover: #eff6ff;     /* Light Blue Hover State */
+    --color-border: #e5e7eb;    /* Light Gray (Dividers) */
+    --color-card-bg: #f1f5f9;   /* Light Gray for Cards */
+    --color-white: #ffffff;     /* Pure White */
+    --color-gradient-start: #6366f1;
+    --color-gradient-end: #8b5cf6;
 }
 
-/* --- Global Resets and Utility Classes --- */
+/* --- Global Resets --- */
 
 *,
 *::before,
 *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -27,12 +31,10 @@ html {
     overflow-x: hidden;
 }
 
-/* Ensures target sections clear any fixed navigation/header */
 .scroll-element {
     scroll-margin-top: 50px;
 }
 
-/* Visibility classes for JS animations */
 .aftertw {
     visibility: hidden;
     margin-top: 80px;
@@ -47,14 +49,15 @@ html {
 
 body {
     background-color: var(--color5);
-    padding-bottom: 20px;
+    padding-bottom: 40px;
     -ms-overflow-style: none;
     scrollbar-width: none;
     overflow-y: scroll;
     overflow-x: hidden;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     color: var(--color3);
-    line-height: 1.6;
+    line-height: 1.8;
+    font-size: 16px;
 }
 
 body::-webkit-scrollbar {
@@ -62,7 +65,7 @@ body::-webkit-scrollbar {
 }
 
 
-/* --- Layout: Sidebar and Main Content --- */
+/* --- Sidebar Layout --- */
 
 .sidebar {
     position: fixed;
@@ -70,75 +73,79 @@ body::-webkit-scrollbar {
     left: 0;
     width: 320px; 
     height: 100vh;
-    background: linear-gradient(180deg, var(--color1) 0%, #0f172a 100%);
-    color: var(--color5);
-    padding: 40px 30px;
+    background: linear-gradient(165deg, #1a1f3a 0%, #0a0e27 100%);
+    color: var(--color-white);
+    padding: 48px 32px;
     overflow-y: auto;
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.3);
     z-index: 100;
 }
 
-/* Main Content Area */
+/* Main Content */
 .content {
     margin-left: 320px; 
-    padding: 60px 48px;
+    padding: 64px 56px;
     min-height: 100vh;
-    max-width: 1400px;
+    max-width: 1600px;
 }
 
 
-/* --- Typography & Headings --- */
+/* --- Typography --- */
 
 .title-container {
     padding: 0;
-    margin-bottom: 48px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 32px;
+    margin-bottom: 56px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding-bottom: 40px;
 }
 
 .firstname,
 .lastname {
     font-family: "Poppins", "Inter", sans-serif;
     color: #ffffff;
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    line-height: 1.1;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.2;
     margin: 0;
+    padding: 4px 0;
     width: auto;
     vertical-align: middle;
-    animation: fadein 1.2s ease-out;
+    animation: fadein 1s ease-out;
     font-weight: 700;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .lastname {
-    background: linear-gradient(135deg, var(--color4) 0%, var(--color2) 100%);
+    background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin-left: 0;
-    animation: fadein 1.5s ease-out;
+    animation: fadein 1.3s ease-out;
 }
 
 .titlehead {
     font-family: "Inter", sans-serif;
-    color: #94a3b8;
-    font-size: clamp(1rem, 2vw, 1.125rem);
-    margin: 16px 0 0 0;
+    color: #cbd5e1;
+    font-size: clamp(1.05rem, 2vw, 1.2rem);
+    margin: 24px 0 0 0;
     width: auto;
     font-weight: 400;
-    letter-spacing: 0.01em;
+    line-height: 1.9;
+    letter-spacing: 0.02em;
 }
 
-/* Section Headings */
+/* Section Titles */
 .section-title {
     font-family: "Poppins", "Inter", sans-serif;
-    color: var(--color1);
-    font-size: clamp(2rem, 4vw, 2.5rem);
-    margin-bottom: 40px;
-    padding-bottom: 16px;
-    border-bottom: 3px solid var(--color2);
+    color: var(--color-highlight);
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    margin-bottom: 48px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid var(--color-highlight);
     font-weight: 700;
-    letter-spacing: -0.02em;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
     position: relative;
 }
 
@@ -147,9 +154,9 @@ body::-webkit-scrollbar {
     position: absolute;
     bottom: -3px;
     left: 0;
-    width: 80px;
+    width: 120px;
     height: 3px;
-    background: var(--color-highlight);
+    background: linear-gradient(90deg, var(--color-gradient-start), var(--color-gradient-end));
 }
 
 
@@ -167,34 +174,93 @@ body::-webkit-scrollbar {
 }
 
 
-/* --- Enhanced Card Styles --- */
+/* --- Card Styles --- */
 
 .skill-card,
 .experience-card,
 .education-card {
     background: var(--color-card-bg);
-    border-radius: 12px;
-    padding: 24px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    transition: all 0.3s ease;
-    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 32px 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid transparent;
 }
 
 .skill-card:hover,
 .experience-card:hover,
 .education-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.12);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(99, 102, 241, 0.15);
     border-color: var(--color2);
+    background: var(--color-white);
+}
+
+/* Card Title Styles */
+.skill-card h3,
+.experience-card h3,
+.education-card h3 {
+    color: var(--color3);
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    line-height: 1.4;
+}
+
+/* List Items in Cards */
+.skill-card ul,
+.experience-card ul,
+.education-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-card li,
+.experience-card li,
+.education-card li {
+    color: var(--color3);
+    font-size: 1rem;
+    line-height: 2.2;
+    margin-bottom: 12px;
+    padding-left: 32px;
+    position: relative;
+}
+
+.skill-card li::before,
+.experience-card li::before,
+.education-card li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color2);
+    font-weight: 700;
+    font-size: 1.1rem;
 }
 
 
-/* --- Link Styles --- */
+/* --- Work Experience Dates --- */
+
+.experience-date,
+.education-date {
+    color: var(--color-text-subtle);
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    margin-top: 12px;
+    display: block;
+    line-height: 1.6;
+}
+
+
+/* --- Links --- */
 
 a {
     color: var(--color2);
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: all 0.25s ease;
+    font-weight: 500;
 }
 
 a:hover {
@@ -202,26 +268,40 @@ a:hover {
 }
 
 
-/* --- Button Styles --- */
+/* --- Buttons --- */
 
 .btn,
 button {
-    background: var(--color2);
+    background: linear-gradient(135deg, var(--color-gradient-start), var(--color-gradient-end));
     color: white;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-weight: 500;
-    transition: all 0.2s ease;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+    transition: all 0.3s ease;
     border: none;
     cursor: pointer;
     font-family: inherit;
+    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+    margin: 8px 4px;
+    display: inline-block;
 }
 
 .btn:hover,
 button:hover {
-    background: var(--color4);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4);
+}
+
+
+/* --- Grid Layout for Skills Cards --- */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    margin-bottom: 48px;
 }
 
 
@@ -237,25 +317,53 @@ button:hover {
         position: relative; 
         width: 100%;
         height: auto;
-        padding: 32px 20px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 40px 24px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
     }
 
     .content {
         margin-left: 0; 
-        padding: 32px 20px;
+        padding: 40px 24px;
     }
 
     .firstname,
     .lastname {
-        font-size: 2.25rem;
+        font-size: 2.5rem;
     }
     
     .titlehead {
-        font-size: 1rem;
+        font-size: 1.05rem;
+        line-height: 1.8;
+        margin-top: 20px;
     }
 
     .section-title {
         font-size: 2rem;
+        margin-bottom: 32px;
+    }
+
+    .skill-card,
+    .experience-card,
+    .education-card {
+        padding: 24px 20px;
+    }
+
+    .skill-card li,
+    .experience-card li,
+    .education-card li {
+        line-height: 2;
+        margin-bottom: 10px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .btn,
+    button {
+        padding: 14px 28px;
+        font-size: 1rem;
+        margin: 6px 2px;
     }
 }
