@@ -230,12 +230,7 @@ button:hover {
         margin-left: 0; 
         padding: 40px 24px;
     }
-
-    .firstname,
-    .lastname {
-        font-size: 2.5rem;
-    }
-    
+   
     .titlehead {
         font-size: 1.05rem;
         line-height: 1.9;
