@@ -73,7 +73,7 @@
   font-size: 14px;
   font-family: "Kumbh Sans", sans-serif;
   font-weight: bold;
-  color: var(--color5);
+  color: var(--color-text-subtle);
   text-shadow: 2px 2px 2px #17252a80;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -96,7 +96,7 @@
   font-size: 14px;
   font-family: "Kumbh Sans", sans-serif;
   font-weight: bold;
-  color: var(--color5);
+  color: var(--color-text-subtle);
   text-shadow: 2px 2px 2px #17252a80;
   text-transform: uppercase;
   letter-spacing: 1px;
