@@ -166,7 +166,7 @@ body::-webkit-scrollbar {
 }
 
 /* ==========================================
-   SIDEBAR/NAVIGATION
+   SIDEBAR NAVIGATION
    ========================================== */
 
 .sidenav {
@@ -252,7 +252,7 @@ hr {
 .nav_btns button {
     width: inherit;
     height: 35px;
-    margin: 0;
+    margin: 8px 0;
     padding: 1px;
     border: none;
     background-color: var(--color2);
@@ -271,6 +271,9 @@ hr {
 
 .nav_bottom_btns {
     padding: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
 }
 
 .nav_bottom_btns button {
@@ -280,19 +283,37 @@ hr {
     font-size: 12px;
     justify-content: center;
     align-items: center;
-    height: 30px;
-    width: 80%;
+    height: 35px;
+    width: 48%;
     min-width: 100px;
     border-radius: 5px;
     background: var(--color2);
     border: none;
     cursor: pointer;
     transition: all 0.25s ease;
+    white-space: nowrap;
+    padding: 0 10px;
 }
 
 .nav_bottom_btns button:hover {
     color: var(--color1);
     background: var(--color4);
+}
+
+/* Responsive Sidebar */
+@media (max-width: 800px) {
+    .sidenav {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 40px 24px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav_btns button {
+        font-size: 15pt;
+        height: 45px;
+    }
 }
 
 /* ==========================================
