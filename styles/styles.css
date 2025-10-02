@@ -176,7 +176,7 @@ a:hover {
 
 .btn,
 button {
-    background: linear-gradient(135deg, #9398a5, #bdc0c8);
+    background: linear-gradient(135deg, #6b7280, #9ca3af);
     color: black;
     padding: 16px 32px;
     border-radius: 12px;
@@ -196,7 +196,7 @@ button {
 button:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(135deg, #6b7280, #9ca3af);
+    background: linear-gradient(135deg, #9398a5, #bdc0c8);
 }
 
 
