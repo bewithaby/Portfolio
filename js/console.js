@@ -10,8 +10,9 @@ var aText = new Array(
 "> Hello!", 
 "> My name is Abhilash Emmanuel",
 "> I am a Multidisciplinarian from India", 
+"> Learning, unlearning, and reinventing every day.",
 "> I am passionate about technology and creative design",
-"> My Trifecta: AI, Visuals, and PM expertise", 
+"> My Trifecta: AI, Visuals, and PM expertise",  
 "> Want to know more? You’re at the right place :)"
 );
 var iSpeed = 20; // time delay of print out
