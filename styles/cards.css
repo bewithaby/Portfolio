@@ -13,7 +13,7 @@
 }
 
 .skill-cards .card {
-  border: 2px solid var(--color4);
+  border: 2px solid var(--color2);
   background-color: var(--color4);
   border-radius: 5px;
   box-shadow: 0 8px 3px rgba(0, 0, 0, 0.25);
