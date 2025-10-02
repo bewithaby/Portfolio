@@ -4,7 +4,7 @@
     --color2: #6b7280;          /* Medium Gray (Accents) */
     --color3: #111827;          /* Almost Black (Body Text) */
     --color4: #9ca3af;          /* Light Gray (Hover, Links) */
-    --color5: #f9fafb;          /* Off-White Background */
+    --color5: #e6edf4;          /* f9fafb Off-White Background */
 
     /* Functional Colors */
     --color-highlight: #374151; /* Dark Gray for emphasis */
@@ -13,7 +13,7 @@
     --color-card-bg: #8b5cf6;   /* Purple for skill cards (from mockup) */
     --color-card-bg-alt: #a78bfa; /* Lighter purple variant */
     --color-white: #ffffff;     /* Pure White */
-    --sidebar-text: #f3f4f6;    /* Very light gray for sidebar text */
+    --sidebar-text: #ffffff;    /* f3f4f6 Very light gray for sidebar text */
 }
 
 /* --- Global Resets --- */
@@ -122,15 +122,15 @@ body::-webkit-scrollbar {
 }
 
 .lastname {
-    color: #374151;
+    color: #335576;
     margin-left: 0;
     animation: fadein 1.3s ease-out;
 }
 
 .titlehead {
     font-family: "Inter", sans-serif;
-    color: #e5e7eb;
-    font-size: clamp(1.05rem, 2vw, 1.2rem);
+    color: #3b6288;
+    font-size: clamp(2.05rem, 2vw, 1.2rem);
     margin: 28px 0 0 0;
     width: auto;
     font-weight: 400;
