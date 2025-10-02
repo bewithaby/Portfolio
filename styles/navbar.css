@@ -9,10 +9,9 @@
   z-index: 1;
   top: 0;
   left: 0;
-  color: var(--color5);
+  color: var(--color3);
   text-align: center;
   box-shadow: 2px 0px 3px rgba(0, 0, 0, 0.25);
-  font-color: #fffff;
 }
 
 .sidenavcontent {
