@@ -85,7 +85,7 @@ hr {
 .nav_btns button {
     width: inherit;
     height: 35px;
-    margin: 8px 0;
+    margin: 4px 0;
     padding: 1px;
     border: none;
     background-color: var(--color2);
