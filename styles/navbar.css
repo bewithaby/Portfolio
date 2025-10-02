@@ -1,0 +1,145 @@
+/* ==========================================
+   SIDEBAR NAVIGATION
+   ========================================== */
+
+.sidenav {
+    height: 100%;
+    width: 300px;
+    padding: 20px;
+    background: linear-gradient(180deg, #778899 0%, #546270 100%);
+    position: fixed;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    color: var(--color3);
+    text-align: center;
+    box-shadow: 2px 0 3px rgba(0, 0, 0, 0.25);
+}
+
+.sidenavcontent {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+}
+
+.profile-picture {
+    display: block;
+    margin: 5px auto 0;
+    border: 5px solid var(--color2);
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.sidebarname {
+    font-family: "Open Sans", sans-serif;
+    font-size: 18pt;
+    margin: 15px 0 0;
+}
+
+.sidebarcitation {
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 12pt;
+    margin: 0;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.column {
+    float: left;
+    width: 25%;
+}
+
+.column_button {
+    float: left;
+    width: 50%;
+}
+
+.mediaicon {
+    display: block;
+    margin: 0 auto;
+    width: 40px;
+}
+
+hr {
+    height: 1px;
+    background-color: var(--color5);
+    border: none;
+    margin: 15px 0;
+}
+
+.nav_btns {
+    margin: 20px 0;
+    width: inherit;
+}
+
+.nav_btns button {
+    width: inherit;
+    height: 35px;
+    margin: 0;
+    padding: 1px;
+    border: none;
+    background-color: var(--color2);
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 15px;
+    outline: none;
+    transition: background-color 0.25s ease;
+}
+
+.nav_btns button:hover {
+    background-color: var(--color1);
+}
+
+.nav_bottom_btns {
+    padding: 10px;
+}
+
+.nav_bottom_btns button {
+    display: flex;
+    font-family: "Kumbh Sans", sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 80%;
+    min-width: 100px;
+    border-radius: 5px;
+    background: var(--color2);
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.nav_bottom_btns button:hover {
+    color: var(--color1);
+    background: var(--color4);
+}
+
+/* Responsive Sidebar */
+@media (max-width: 800px) {
+    .sidenav {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 40px 24px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav_btns button {
+        font-size: 15pt;
+        height: 45px;
+    }
+}

@@ -1,0 +1,18 @@
+/* ==========================================
+   LAYOUT - Main Content Structure
+   ========================================== */
+
+.content {
+    margin-left: 320px;
+    padding: 64px 56px;
+    min-height: 100vh;
+    max-width: 1600px;
+}
+
+/* Responsive Layout */
+@media (max-width: 800px) {
+    .content {
+        margin-left: 0;
+        padding: 40px 24px;
+    }
+}
