@@ -85,7 +85,6 @@ hr {
   margin: 0px;
   padding: 0px;
   border: none;
-  color: var(--color4);
   background-color: var(--color2);
   cursor: pointer;
   display: inline-block;
@@ -115,7 +114,6 @@ hr {
   border-radius: 5px;
   background: var(--color2);
   border: none;
-  color:  var(--color4);
   cursor: pointer;
   transition: all 0.25s ease;
 }
