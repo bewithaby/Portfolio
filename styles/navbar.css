@@ -104,11 +104,12 @@ hr {
 }
 
 .nav_bottom_btns button {
-  display: inline;
+  display: flex;
   font-family: "Kumbh Sans", sans-serif;
   font-weight: bold;
   font-size: 12px;
-  vertical-align: middle;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;    /* Centers vertically */
   height: 30px;
   width: 80%;
   min-width: 100px;
