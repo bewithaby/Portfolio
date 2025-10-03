@@ -126,6 +126,12 @@
     padding: 30px 80px 30px 30px;
     position: relative;
     border-radius: 0 500px 500px 0;
+    transition: var(--transition-smooth);
+}
+
+.we_container .we_content:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 36px rgba(139, 92, 246, 0.35);
 }
 
 .we_container.right .we_content {
