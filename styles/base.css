@@ -124,8 +124,8 @@ body::-webkit-scrollbar {
 .section-title {
     font-family: "Poppins", "Inter", sans-serif;
     color: #000000;
-    font-size: clamp(3rem, 5vw, 4rem);
-    margin-bottom: 56px;
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    margin-bottom: 48px;
     padding-bottom: 24px;
     border-bottom: 4px solid #000000;
     font-weight: 900;
