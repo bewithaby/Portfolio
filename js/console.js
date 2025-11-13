@@ -1,7 +1,3 @@
-var birthday = new Date('December 16, 1997 00:00:00')
-var ageDifMs = Date.now() - birthday.getTime();
-var ageDate = new Date(ageDifMs); // miliseconds from epoch
-var age = Math.abs(ageDate.getUTCFullYear() - 1970).toString();
 var finished_typing = false;
 var filled = false;
 
