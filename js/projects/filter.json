@@ -1,104 +1,30 @@
 [
     {
-        "repo": "Warranty-Management-System-n8n",
         "title": "Warranty Management System",
-        "logo": "assets/projects/bird.png"
+        "description": "A system to manage warranties efficiently using n8n workflows.",
+        "url": "https://github.com/bewithaby/Warranty-Management-System-n8n",
+        "logo": "assets/projects/bird.png",
+        "languages": ["n8n", "JavaScript", "HTML"]
     },
     {
-        "repo": "Personal-Assistant-n8n",
-        "title": "Personal Assistant",
-        "logo": "assets/projects/pong.jpg"
+        "title": "Despite Everything (AI Shortfilm)",
+        "description": "Despite Everything" is a visual poem that explores the quiet moments of joy found in the midst of struggle.",
+        "url": "http://youtube.com/watch?v=NxaVQ67XbiA",
+        "logo": "assets/media/youtube_selected.png",
+        "Tech": ["Nano Banana Pro", "Veo3.1", "Suno AI", "Eleven Labs", "VN"]
     },
     {
-        "repo": "bewithaby.github.io",
         "title": "My Portfolio",
-        "logo": "assets/projects/portfolio.png"
+        "description": "The source code for this portfolio website.",
+        "url": "https://bewithaby.github.io",
+        "logo": "assets/projects/portfolio.png",
+        "languages": ["HTML", "CSS", "JavaScript"]
     },
     {
-        "repo": "sudoariel.github.io",
-        "title": "My Portfolio",
-        "logo": "assets/projects/portfolio.png"
-    },
-    {
-        "repo": "OpenGenius-game",
-        "title": "OpenGenius",
-        "logo": "assets/projects/opengenius.jpg"
-    },
-    {
-        "repo": "PID-controller-for-EV3-with-arduino",
         "title": "PID Controller for Lego EV3",
-        "logo": "assets/projects/pid_ev3.jpg"
-    },
-    {
-        "repo": "Self-balancing-robot",
-        "title": "Self balancing robot",
-        "logo": "assets/projects/robot.jpeg"
-    },
-    {
-        "repo": "Edge-detection-with-quadtree",
-        "title": "Quadtree Edge Detection",
-        "logo": "assets/projects/quadtree_edge.png"
-    },
-    {
-        "repo": "snakeAI",
-        "title": "snakeAI",
-        "logo": "assets/projects/snakeAIgame.png"
-    },
-    {
-        "repo": "dsp-audio-effects",
-        "title": "DSP Audio Effects",
-        "logo": "assets/projects/dsp_audio_effects.png"
-    },
-    {
-        "repo": "dsp-spectrogram-ODF",
-        "title": "DSP Spectrogram and ODF",
-        "logo": "assets/projects/dsp_spectrogram.png"
-    },
-    {
-        "repo": "dsp-upsampling-downsampling",
-        "title": "DSP upsampling and downsampling",
-        "logo": "assets/projects/dsp_up_down.png"
-    },
-    {
-        "repo": "dsp-FilterKaiserWindow",
-        "title": "DSP Kaiser Filter",
-        "logo": "assets/projects/dsp_kaiser.png"
-    },
-    {
-        "repo": "MyShell",
-        "title": "MyShell",
-        "logo": "assets/projects/shell.png"
-    },
-    {
-        "repo": "SodokuMultithread",
-        "title": "Soduku Validator Multithread",
-        "logo": "assets/projects/sodoku.png"
-    },
-    {
-        "repo": "TuringMachine-TimezoneTravelCalculator",
-        "title": "Timezone Travel Calculator",
-        "logo": "assets/projects/turing_machine.png"
-    },
-    {
-        "repo": "AOSP-Tools",
-        "title": "AOSP Tools",
-        "logo": "assets/projects/aosp-tools.png"
-    },
-    {
-        "repo": "Android-Emulator-MicVolumeStabilizer",
-        "title": "Android Emulator Microphone Stabilizer",
-        "logo": "assets/projects/mic-stabilizer.png"
-    },
-    {
-        "repo": "AOSP-CarSettings",
-        "title": "AOSP CarSettings Customization",
-        "logo": "assets/projects/car-settings.png"
-    },
-    {
-        "repo": "AOSP-AndroidHAL",
-        "title": "AOSP Android HAL",
-        "logo": "assets/projects/hal.png"
+        "description": "Implementation of PID controller logic for Lego Mindstorms.",
+        "url": "https://github.com/bewithaby/PID-controller-for-EV3-with-arduino",
+        "logo": "assets/projects/pid_ev3.jpg",
+        "languages": ["C", "C++"]
     }
-
-
 ]
