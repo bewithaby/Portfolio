@@ -9,44 +9,49 @@ function initCarousel(data) {
     leftSlider = document.getElementById('left_slider');
     centerSlider = document.getElementById('center_slider');
     rightSlider = document.getElementById('right_slider');
+    
     cardsPosition = [
         { 'card': card1, 'slider': leftSlider },
         { 'card': card2, 'slider': centerSlider },
         { 'card': card3, 'slider': rightSlider }
     ];
     
-    clearLanguagesField();
-    
     card1.onclick = function() { checkClick(card1) };
     card2.onclick = function() { checkClick(card2) };
     card3.onclick = function() { checkClick(card3) };
 
+    projectsData = data;
+
+    // Initial Load
     updateCard(cardsPosition[0]['card'], data[prevIndex(currentIndex, data.length)]);
     updateCard(cardsPosition[1]['card'], data[currentIndex]);
     updateCard(cardsPosition[2]['card'], data[nextIndex(currentIndex, data.length)]);
     
-    // SAFETY FIX: Added '|| []' to prevent crashes if 'languages' is missing
-    (data[currentIndex]['languages'] || []).forEach(appendLanguageImage);
+    refreshLanguages();
+}
+
+// --- NEW Helper Function to remove redundancy ---
+function refreshLanguages() {
+    clearLanguagesField();
+    const field = document.getElementById('projects_languages');
+    const currentLangs = projectsData[currentIndex]['languages'] || [];
     
-    projectsData = data;
+    // Pass 'field' to avoid looking it up in the DOM for every single language
+    currentLangs.forEach((lang, idx) => appendLanguageImage(lang, idx, field));
 }
 
 function updateCard(card, data) {
-    // 1. Update Title, Logo, Description
     card.children[0].textContent = data['title'];
     card.children[1].src = data['logo'];
     card.children[2].textContent = data['description'];
 
-    // 2. Find the correct button element
-    // We look at the 4th element (index 3). If it's a link, use it.
-    // If it's a wrapper div, look for the link inside it.
+    // Robust button finding logic
     let buttonContainer = card.children[3];
     let button = buttonContainer.tagName === 'A' ? buttonContainer : buttonContainer.querySelector('a');
-    
-    // Fallback: If we still can't find a specific link tag, just use the container
     if (!button) button = buttonContainer;
 
-    // 3. Determine the button text
+    button.innerHTML = ""; // Clear old icons/text
+
     let buttonText = "View Project";
     const url = (data['url'] || "").toLowerCase();
 
@@ -58,13 +63,10 @@ function updateCard(card, data) {
         buttonText = "View Document";
     }
 
-    // 4. Update text and link
-    button.textContent = buttonText; 
+    button.textContent = buttonText;
     button.href = data['url'];
     
-    // 5. Ensure the click opens in a new tab
     button.onclick = function(e) {
-        // Allow default Ctrl+Click behavior, otherwise open in new tab
         if(!e.ctrlKey && !e.metaKey){
             e.preventDefault();
             window.open(data['url'], '_blank').focus();
@@ -82,43 +84,35 @@ function checkClick(card) {
             cardsPosition = rotateLeft(cardsPosition);
             rightClick();
             break;
-        default:
-            break;
     }
 }
 
 function leftClick() {
-    clearLanguagesField();
     currentIndex = prevIndex(currentIndex, projectsData.length);
-    // SAFETY FIX: Added '|| []'
-    (projectsData[currentIndex]['languages'] || []).forEach(appendLanguageImage);
+    refreshLanguages(); // Replaced duplicate code
     updateCard(cardsPosition[0]['card'], projectsData[prevIndex(currentIndex, projectsData.length)]);
 }
 
 function rightClick() {
-    clearLanguagesField();
     currentIndex = nextIndex(currentIndex, projectsData.length);
-    // SAFETY FIX: Added '|| []'
-    (projectsData[currentIndex]['languages'] || []).forEach(appendLanguageImage);
+    refreshLanguages(); // Replaced duplicate code
     updateCard(cardsPosition[2]['card'], projectsData[nextIndex(currentIndex, projectsData.length)]);
 }
 
 function prevIndex(index, size) {
-    return index == 0 ? size - 1 : index - 1;
+    return index === 0 ? size - 1 : index - 1;
 }
 
 function nextIndex(index, size) {
-    return index == size - 1 ? 0 : index + 1;
+    return index === size - 1 ? 0 : index + 1;
 }
 
 function rotateLeft(arr) {
-    let first = arr.shift();
-    arr.push(first);
+    arr.push(arr.shift());
     return arr;
 }
 
 function rotateRight(arr) {
-    let last = arr.pop();
-    arr.unshift(last);
+    arr.unshift(arr.pop());
     return arr;
 }
