@@ -1,17 +1,17 @@
 [
     {
-        "title": "Warranty Management System",
-        "description": "A system to manage warranties efficiently using n8n workflows.",
-        "url": "https://github.com/bewithaby/Warranty-Management-System-n8n",
-        "logo": "assets/projects/bird.png",
-        "languages": ["n8n", "JavaScript", "HTML"]
-    },
-    {
         "title": "Despite Everything (AI Shortfilm)",
         "description": "Despite Everything is a visual poem that explores the quiet moments of joy found in the midst of struggle.",
         "url": "http://youtube.com/watch?v=NxaVQ67XbiA",
-        "logo": "assets/media/youtube_selected.png",
+        "logo": "assets/projects/Despite_Everything_Thumbnail.jpeg",
         "Tech": ["Nano Banana Pro", "Veo3.1", "Suno AI", "Eleven Labs", "VN"]
+    },
+    {
+        "title": "Warranty Management System",
+        "description": "A system to manage warranties efficiently using n8n workflows.",
+        "url": "https://github.com/bewithaby/Warranty-Management-System-n8n",
+        "logo": "assets/projects/warranty.png",
+        "languages": ["n8n", "JavaScript", "HTML"]
     },
     {
         "title": "My Portfolio",
@@ -21,10 +21,10 @@
         "languages": ["HTML", "CSS", "JavaScript"]
     },
     {
-        "title": "PID Controller for Lego EV3",
-        "description": "Implementation of PID controller logic for Lego Mindstorms.",
-        "url": "https://github.com/bewithaby/PID-controller-for-EV3-with-arduino",
-        "logo": "assets/projects/pid_ev3.jpg",
-        "languages": ["C", "C++"]
+        "title": "Personal Assistant",
+        "description": "An autonomous Personal AI Assistant using n8n.",
+        "url": "https://github.com/bewithaby/Personal-Assistant-n8n",
+        "logo": "assets/projects/assistant.png",
+        "languages": ["n8n", "JavaScript", "HTML"]
     }
 ]
