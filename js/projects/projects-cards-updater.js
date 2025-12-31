@@ -3,6 +3,12 @@ var projectsData;
 var currentIndex = 0;
 
 function initCarousel(data) {
+    // SAFETY CHECK: If data is empty, stop here to avoid crash
+    if (!data || data.length === 0) {
+        console.error("No project data found. Carousel cannot initialize.");
+        return;
+    }
+
     card1 = document.getElementById('left_card');
     card2 = document.getElementById('center_card');
     card3 = document.getElementById('right_card');
@@ -22,7 +28,10 @@ function initCarousel(data) {
 
     projectsData = data;
 
-    // Initial Load
+    // Trigger the first radio button to ensure CSS layout applies
+    if (centerSlider) centerSlider.checked = true;
+
+    // Load initial cards
     updateCard(cardsPosition[0]['card'], data[prevIndex(currentIndex, data.length)]);
     updateCard(cardsPosition[1]['card'], data[currentIndex]);
     updateCard(cardsPosition[2]['card'], data[nextIndex(currentIndex, data.length)]);
@@ -30,27 +39,31 @@ function initCarousel(data) {
     refreshLanguages();
 }
 
-// --- NEW Helper Function to remove redundancy ---
 function refreshLanguages() {
     clearLanguagesField();
     const field = document.getElementById('projects_languages');
+    // Safety: Ensure we don't crash if 'languages' key is missing
     const currentLangs = projectsData[currentIndex]['languages'] || [];
     
-    // Pass 'field' to avoid looking it up in the DOM for every single language
     currentLangs.forEach((lang, idx) => appendLanguageImage(lang, idx, field));
 }
 
 function updateCard(card, data) {
+    if (!data) return;
+
     card.children[0].textContent = data['title'];
     card.children[1].src = data['logo'];
     card.children[2].textContent = data['description'];
 
-    // Robust button finding logic
+    // Robust Button Logic
     let buttonContainer = card.children[3];
-    let button = buttonContainer.tagName === 'A' ? buttonContainer : buttonContainer.querySelector('a');
-    if (!button) button = buttonContainer;
-
-    button.innerHTML = ""; // Clear old icons/text
+    let button = buttonContainer;
+    
+    // Check if children[3] is the <a> tag, or if the <a> tag is inside it
+    if (buttonContainer.tagName !== 'A') {
+        const nestedLink = buttonContainer.querySelector('a');
+        if (nestedLink) button = nestedLink;
+    }
 
     let buttonText = "View Project";
     const url = (data['url'] || "").toLowerCase();
@@ -63,6 +76,7 @@ function updateCard(card, data) {
         buttonText = "View Document";
     }
 
+    // Set text safely (avoids deleting the element itself)
     button.textContent = buttonText;
     button.href = data['url'];
     
@@ -89,13 +103,13 @@ function checkClick(card) {
 
 function leftClick() {
     currentIndex = prevIndex(currentIndex, projectsData.length);
-    refreshLanguages(); // Replaced duplicate code
+    refreshLanguages();
     updateCard(cardsPosition[0]['card'], projectsData[prevIndex(currentIndex, projectsData.length)]);
 }
 
 function rightClick() {
     currentIndex = nextIndex(currentIndex, projectsData.length);
-    refreshLanguages(); // Replaced duplicate code
+    refreshLanguages();
     updateCard(cardsPosition[2]['card'], projectsData[nextIndex(currentIndex, projectsData.length)]);
 }
 
