@@ -160,6 +160,11 @@ input[type="radio"] {
 .lang-column-default {
     float: left;
     margin: 0 5pt;
+    
+    /* NEW: Enforce consistent height */
+    height: 28px; /* Matches the standard 'for-the-badge' height */
+    width: auto;  /* Allow width to adjust automatically */
+    border-radius: 2px; /* Optional: Slight rounding to match badges */
 }
 
 /* Responsive Projects */
