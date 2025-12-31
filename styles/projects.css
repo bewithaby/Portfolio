@@ -16,6 +16,7 @@ input[type="radio"] {
     display: none;
 }
 
+/* --- Carousel Logic --- */
 #left_slider:checked ~ .projects-cards #right_card,
 #center_slider:checked ~ .projects-cards #left_card,
 #right_slider:checked ~ .projects-cards #center_card {
@@ -44,14 +45,9 @@ input[type="radio"] {
     cursor: initial;
 }
 
-#left_slider:not(:checked) ~ .projects-cards #left_card_button {
-    display: none;
-}
-
-#center_slider:not(:checked) ~ .projects-cards #center_card_button {
-    display: none;
-}
-
+/* Hide inactive buttons */
+#left_slider:not(:checked) ~ .projects-cards #left_card_button,
+#center_slider:not(:checked) ~ .projects-cards #center_card_button,
 #right_slider:not(:checked) ~ .projects-cards #right_card_button {
     display: none;
 }
@@ -62,6 +58,7 @@ input[type="radio"] {
     grid-row: 1;
 }
 
+/* --- Card Styling --- */
 .projects-cards .card {
     display: block;
     height: 10rem;
@@ -73,18 +70,19 @@ input[type="radio"] {
     object-fit: cover;
     transition: transform 1s ease;
     cursor: pointer;
-    user-select: none;
+    user-select: none; /* Keep this to prevent highlighting during carousel rotation */
 }
 
 .projects-cards .card_title {
-    display: inline;
+    display: block; /* Changed from inline to block for better layout */
     font-family: "Kumbh Sans", sans-serif;
     font-weight: bold;
     color: var(--color1);
     font-size: 100%;
     vertical-align: middle;
-    line-height: 1rem;
-    user-select: none;
+    line-height: 1.2rem;
+    margin-bottom: 0.5rem; /* Add spacing between title and desc */
+    user-select: text; /* Allow users to copy title */
 }
 
 .projects-cards .card_description {
@@ -93,7 +91,7 @@ input[type="radio"] {
     font-size: 100%;
     vertical-align: middle;
     line-height: 1rem;
-    user-select: none;
+    user-select: text; /* Allow users to copy description */
 }
 
 .projects-cards .card_logo {
@@ -104,6 +102,7 @@ input[type="radio"] {
     user-select: none;
 }
 
+/* --- Button Styling --- */
 .projectsbutton {
     position: absolute;
     bottom: 10px;
@@ -122,6 +121,11 @@ input[type="radio"] {
     font-weight: bold;
     cursor: pointer;
     transition: all 0.25s ease;
+    
+    /* FIX: Ensure flex/centering for the dynamic text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .projectsbutton:hover {
@@ -133,21 +137,20 @@ input[type="radio"] {
     letter-spacing: 2px;
 }
 
-.projectsbutton::after {
-    content: "OPEN IN GITHUB";
-}
+/* DELETED: .projectsbutton::after { content: "OPEN IN GITHUB"; } */
 
+/* --- Languages Section --- */
 .projects-languages {
     display: inline-block;
     position: relative;
-    align-items: center;
-    justify-content: center;
+    /* Removed align-items/justify-content as they don't work on inline-block */
     left: 50%;
     transform: translateX(-50%);
     background-color: var(--color5);
     padding: 10pt;
     box-shadow: 0 8px 3px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
+    text-align: center; /* Ensures badges are centered */
 }
 
 .projects-languages:empty {
