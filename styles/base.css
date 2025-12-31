@@ -23,6 +23,9 @@
     --name-secondary: #335576;
     --tagline-color: #3b6288;
     
+    /* NEW: Centralized Shadow for Hover Effects */
+    --shadow-hover: 0 12px 36px rgba(139, 92, 246, 0.35); 
+    
     /* Spacing */
     --spacing-section: 4rem;
     --spacing-card: 1.5rem;
