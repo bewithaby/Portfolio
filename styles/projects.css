@@ -75,9 +75,24 @@ input[type="radio"] {
     box-shadow: 0 8px 3px rgba(0, 0, 0, 0.25);
     padding: 1rem;
     object-fit: cover;
-    transition: transform 1s ease;
     cursor: pointer;
     user-select: none;
+    
+    /* HOVER LOGIC FIX */
+    position: relative; /* Required for 'top' to work */
+    top: 0; 
+    
+    /* SPLIT TRANSITION: 
+       - transform 1s (Slow rotation for carousel)
+       - top/box-shadow 0.3s (Fast response for hover) */
+    transition: transform 1s ease, top 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* NEW: The Hover Effect */
+.projects-cards .card:hover {
+    top: -6px; /* Lifts the card without breaking carousel transform */
+    box-shadow: var(--shadow-hover); /* Uses the new variable */
+    z-index: 10; /* Ensures hovered card stays on top */
 }
 
 .projects-cards .card_title {
