@@ -16,12 +16,12 @@ const logo = {
     
     // --- Local Custom Badges ---
     // [Type, Filename, BackgroundColor, TextColor]
-    'Nano Banana Pro': ['LOCAL', 'banana_pro.png', '#FFD700', '#000000'], 
+    'Nano Banana Pro': ['LOCAL', 'banana.png', '#FFD700', '#000000'], 
     'Veo 3.1':         ['LOCAL', 'veo.png', '#4285F4', '#FFFFFF'],
     'Suno AI':         ['LOCAL', 'suno.png', '#000000', '#FFFFFF'],
-    'Eleven Labs':     ['LOCAL', 'eleven_labs.png', '#333333', '#FFFFFF'],
+    'Eleven Labs':     ['LOCAL', '11.png', '#333333', '#FFFFFF'],
     'Seedream 4.5':    ['LOCAL', 'seedream.png', '#EA4C89', '#FFFFFF'],
-    'VN':              ['LOCAL', 'vn_editor.png', '#0096FF', '#FFFFFF'],
+    'VN':              ['LOCAL', 'vn.png', '#0096FF', '#FFFFFF'],
     
     // --- Mixed ---
     'Photoshop': ['adobephotoshop', '31A8FF', '001E36'],
