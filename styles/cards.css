@@ -22,7 +22,7 @@
 
 .skill-cards .card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 12px 36px rgba(139, 92, 246, 0.35);
+    box-shadow: var(--shadow-hover); /* Optimized */
 }
 
 .skill-cards .card_title {
