@@ -13,9 +13,10 @@ const logo = {
     'C++': ['cplusplus', '00599C', 'FFFFFF'],
     'C#': ['csharp', '239120', 'FFFFFF'],
     'n8n': ['n8n', 'FF6584', '222222'],
-    
+    'Java': ['java', 'f89820', 'ebebeb'],
+    'Shell': ['gnu-bash', 'FFFFFF', '4EAA25'],
+
     // --- Local Custom Badges ---
-    // [Type, Filename, BackgroundColor, TextColor]
     'Nano Banana Pro': ['LOCAL', 'banana.png', '#FFD700', '#000000'], 
     'Veo 3.1':         ['LOCAL', 'veo.png', '#4285F4', '#FFFFFF'],
     'Suno AI':         ['LOCAL', 'suno.png', '#000000', '#FFFFFF'],
@@ -25,6 +26,8 @@ const logo = {
     
     // --- Mixed ---
     'Photoshop': ['adobephotoshop', '31A8FF', '001E36'],
+    'Runway': ['youtube', 'FF0000', 'FFFFFF'], 
+    'Krea': ['behance', 'FFFFFF', '525252'],
 };
 
 function clearLanguagesField() {
@@ -48,29 +51,25 @@ function appendLanguageImage(language, index, field) {
     
     if (field && logo[language]) {
         if (logo[language][0] === 'LOCAL') {
-            // --- BUILD CUSTOM HTML BADGE ---
+            // --- CUSTOM BADGE (DIV) ---
             const container = document.createElement('div');
             container.className = 'custom-badge lang-column-default';
-            
-            // Apply colors from config
             container.style.backgroundColor = logo[language][2]; 
             container.style.color = logo[language][3];
             
-            // 1. The Logo Image
             const img = document.createElement('img');
             img.src = `assets/tech/${logo[language][1]}`;
             img.alt = language;
             
-            // 2. The Text Label
             const span = document.createElement('span');
-            span.textContent = language.toUpperCase(); // Badges usually use uppercase
+            span.textContent = language.toUpperCase();
             
             container.appendChild(img);
             container.appendChild(span);
             field.appendChild(container);
             
         } else {
-            // --- STANDARD SHIELD ---
+            // --- STANDARD SHIELD (IMG) ---
             const img = document.createElement('img');
             img.src = buildURL(language);
             img.className = 'lang-column-default';
