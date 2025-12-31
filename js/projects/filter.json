@@ -4,7 +4,7 @@
         "description": "Despite Everything is a visual poem that explores the quiet moments of joy found in the midst of struggle.",
         "url": "http://youtube.com/watch?v=NxaVQ67XbiA",
         "logo": "assets/projects/Despite_Everything_Thumbnail.jpeg",
-        "Tech": ["Nano Banana Pro", "Veo 3.1", "Suno AI", "Eleven Labs", "VN"]
+        "languages": ["Nano Banana Pro", "Veo 3.1", "Suno AI", "Eleven Labs", "VN"]
     },
     {
         "title": "Warranty Management System",
