@@ -22,11 +22,22 @@ function initCarousel(data){
     projectsData = data;
 }
     
-
 function updateCard(card, data){
     card.children[0].textContent = data['title'];
     card.children[1].src = data['logo'];
     card.children[2].textContent = data['description'];
+    let buttonText = "View Project"; // Default text
+    const url = data['url'].toLowerCase();
+
+    if (url.includes("youtube.com") || url.includes("youtu.be")) {
+        buttonText = "Watch Video";
+    } else if (url.includes("github.com")) {
+        buttonText = "View Code";
+    } else if (url.includes("drive.google.com")) {
+        buttonText = "View Document";
+    }
+    
+    card.children[3].textContent = buttonText;
     card.children[3].onclick = function() {
         window.open(data['url'], '_blank').focus();
     }
