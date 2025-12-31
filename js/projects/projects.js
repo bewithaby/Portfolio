@@ -1,4 +1,5 @@
-async function getProjects() {
+/*
+    async function getProjects() {
     const repos = await getJson('https://github.com/bewithaby?tab=repositories');
     const filter = await getJson('js/projects/filter.json');
     const result = await filterRepos(repos, filter);
@@ -30,3 +31,16 @@ async function filterRepos(reposJson, filterJson) {
     };  
     return reposFiltered;
 }
+*/
+
+async function getProjects() {
+// Directly fetch the local configuration file
+const projects = await getJson('js/projects/filter.json');
+return projects;
+}
+
+async function getJson(url) {
+    const response = await fetch(url);
+    return response.json();
+}
+
