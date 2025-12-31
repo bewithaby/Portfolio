@@ -1,9 +1,10 @@
 const badgeBaseURL = 'https://img.shields.io/badge/';
-const badgeStyle = 'for-the-badge'; // Renamed to avoid generic 'style' conflict
+const badgeStyle = 'for-the-badge';
 
-// Format: 'Tag Name': ['SimpleIconsSlug', 'LogoColor', 'BackgroundColor']
+// Format 1 (Standard): 'Tag Name': ['SimpleIconsSlug', 'LogoColor', 'BackgroundColor']
+// Format 2 (Local):    'Tag Name': ['LOCAL', 'filename.png']
 const logo = {
-    // --- Coding ---
+    // --- Standard Shields (Auto-Generated) ---
     'Python': ['python', '3776AB', 'FFE873'],
     'JavaScript': ['javascript', 'f0db4f', '323330'],
     'HTML': ['html5', 'E34F26', 'FFFFFF'],
@@ -12,22 +13,16 @@ const logo = {
     'C++': ['cplusplus', '00599C', 'FFFFFF'],
     'C#': ['csharp', '239120', 'FFFFFF'],
     'n8n': ['n8n', 'FF6584', '222222'],
-    'Java': ['java', 'f89820', 'ebebeb'],
-    'Shell': ['gnu-bash', 'FFFFFF', '4EAA25'],
-
-    // --- Hardware ---
-    'Nano Banana Pro': ['arm', '0091BD', 'FFD700'], 
-
-    // --- AI Tools ---
-    'Veo 3.1': ['google', '4285F4', 'FFFFFF'], 
-    'Suno AI': ['soundcloud', 'FF5500', '000000'], 
-    'Eleven Labs': ['googleassistant', 'FFFFFF', '333333'], 
-    'Runway': ['youtube', 'FF0000', 'FFFFFF'], 
-    'Seedream 4.5': ['dribbble', 'EA4C89', 'FFFFFF'], 
-    'Krea': ['behance', 'FFFFFF', '525252'],
-
-    // --- Editing ---
-    'VN': ['ios', 'FFFFFF', '0096FF'], 
+    
+    // --- Local Images (Files in assets/tech/) ---
+    'Nano Banana Pro': ['LOCAL', 'banana.png'], 
+    'Veo 3.1':         ['LOCAL', 'veo.png'],
+    'Suno AI':         ['LOCAL', 'suno.png'],
+    'Eleven Labs':     ['LOCAL', '11.png'],
+    'Seedream 4.5':    ['LOCAL', 'seedream.png'],
+    'VN':              ['LOCAL', 'vn.png'],
+    
+    // --- Mixed ---
     'Photoshop': ['adobephotoshop', '31A8FF', '001E36'],
 };
 
@@ -38,7 +33,6 @@ function clearLanguagesField() {
 
 function buildURL(language) {
     if (logo[language]) {
-        // FIXED: Added 'const' to prevent global variable leakage
         const logoName = logo[language][0];
         const logoColor = logo[language][1];
         const backgroundColor = logo[language][2];
@@ -49,14 +43,22 @@ function buildURL(language) {
     }
 }
 
-// Optimized: 'field' is now optional. If passed, we don't need to search DOM again.
 function appendLanguageImage(language, index, field) {
-    // If field wasn't passed, find it (fallback)
     if (!field) field = document.getElementById('projects_languages');
     
-    if (field) {
+    if (field && logo[language]) {
         const img = document.createElement('img');
-        img.src = buildURL(language);
+        
+        // CHECK: Is this a local file or a shield?
+        if (logo[language][0] === 'LOCAL') {
+            // It is a local file
+            img.src = `assets/tech/${logo[language][1]}`;
+            img.alt = language; // Good for accessibility
+        } else {
+            // It is a standard shield
+            img.src = buildURL(language);
+        }
+        
         img.className = 'lang-column-default';
         field.appendChild(img);
     }
