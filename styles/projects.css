@@ -5,17 +5,18 @@
 .projects-cards {
     display: grid;
     position: relative;
-    /* Changed Margin: Top 25pt, Bottom 0 to pull next element up */
+    /* FIX 1: Top margin 25pt, Bottom margin 0. */
     margin: 25pt 10% 0 10%; 
     grid-template-columns: repeat(7, 120px);
     align-items: center;
     justify-content: center;
     transform-style: preserve-3d;
     
-    /* FIX: Reduced from 20rem to 12rem. 
-       The cards are 10rem. 12rem leaves just enough room for shadows 
-       without creating a huge empty gap. */
-    min-height: 12rem; 
+    /* FIX 2: Force explicit height. 
+       Your cards are 10rem. We set this to 11rem to leave 
+       just enough room for the shadow (0.5rem) without extra gaps. */
+    height: 11rem; 
+    min-height: 0; /* Disable min-height logic */
 }
 
 input[type="radio"] {
@@ -145,8 +146,9 @@ input[type="radio"] {
     display: block;
     width: fit-content;
     
-    /* FIX: Reduced top margin to 5px (was 10px or more) */
-    margin: 5px auto 20px auto; 
+    /* FIX 3: Remove top margin (0) to pull it flush against the cards.
+       If you want it even closer, change 0 to -10px */
+    margin: 10px auto 20px auto; 
     
     background-color: var(--color5);
     padding: 10pt;
@@ -154,6 +156,10 @@ input[type="radio"] {
     border-radius: 5px;
     text-align: center;
     min-height: 30px;
+    
+    /* Optional: Ensure it sits on top if they overlap slightly */
+    position: relative; 
+    z-index: 10;
 }
 .projects-languages:empty {
     visibility: hidden;
@@ -192,11 +198,16 @@ div.custom-badge.lang-column-default img {
     float: none;
 }
 
-/* Responsive Projects */
+/* --- Responsive Fix --- */
 @media (max-width: 1100px) {
     .projects-cards {
         grid-template-columns: repeat(7, 90px);
+        
+        /* FIX 4: When cards grow to 14rem on mobile, 
+           we must grow the container too, or they will get cut off. */
+        height: 15.5rem; 
     }
+
     .projects-cards .card {
         height: 14rem;
     }
