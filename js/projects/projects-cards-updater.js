@@ -23,10 +23,20 @@ function initCarousel(data){
 }
     
 function updateCard(card, data){
+    // 1. Update Title, Logo, Description
     card.children[0].textContent = data['title'];
     card.children[1].src = data['logo'];
     card.children[2].textContent = data['description'];
-    let buttonText = "View Project"; // Default text
+    
+    // 2. Find the button (Anchor tag) automatically
+    // This prevents "guessing" the wrong index number
+    let button = card.querySelector('a'); 
+    
+    // If no <a> tag is found, fallback to children[3] just in case
+    if (!button) button = card.children[3];
+
+    // 3. Determine the button text
+    let buttonText = "View Project"; 
     const url = data['url'].toLowerCase();
 
     if (url.includes("youtube.com") || url.includes("youtu.be")) {
@@ -37,10 +47,15 @@ function updateCard(card, data){
         buttonText = "View Document";
     }
     
-    card.children[3].textContent = buttonText;
-    card.children[3].onclick = function() {
+    // 4. Wipe old text/icons and set new text
+    button.innerHTML = buttonText; // Using innerHTML clears any nested <span> or icons
+    
+    // 5. Update the link behavior
+    button.onclick = function() {
         window.open(data['url'], '_blank').focus();
     }
+    // Also update the href for good measure (better for right-click -> open new tab)
+    button.href = data['url'];
 }
 
 function checkClick(card) {    
