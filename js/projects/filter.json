@@ -1,16 +1,16 @@
 [
     {
-        "repo": "FlappyBirdGame",
-        "title": "Flappy Bird Game",
+        "repo": "Warranty-Management-System-n8n",
+        "title": "Warranty Management System",
         "logo": "assets/projects/bird.png"
     },
     {
-        "repo": "PongGame",
-        "title": "Pong Game",
+        "repo": "Personal-Assistant-n8n",
+        "title": "Personal Assistant",
         "logo": "assets/projects/pong.jpg"
     },
     {
-        "repo": "sudoariel.github.io",
+        "repo": "bewithaby.github.io",
         "title": "My Portfolio",
         "logo": "assets/projects/portfolio.png"
     },
