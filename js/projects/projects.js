@@ -1,5 +1,5 @@
 async function getProjects() {
-    const repos = await getJson('https://api.github.com/users/sudoariel/repos');
+    const repos = await getJson('https://github.com/bewithaby?tab=repositories');
     const filter = await getJson('js/projects/filter.json');
     const result = await filterRepos(repos, filter);
     return result;
