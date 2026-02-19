@@ -25,7 +25,7 @@ const logo = {
     'Seedance':    ['LOCAL', 'seedance.png', '#121212', '#FFFFFF'],
     'VN':          ['LOCAL', 'vn.png', '#0096FF', '#FFFFFF'],
     'CapCut':      ['LOCAL', 'capcut.png', '#000000', '#FFFFFF'],
-    'Camb.AI':     ['LOCAL', 'camb.png', '#6C47FF', '#FFFFFF'],
+    'Camb.AI':     ['LOCAL', 'cambai.png', '#6C47FF', '#FFFFFF'],
     'Grok':        ['LOCAL', 'grok.png', '#000000', '#FFFFFF'],
     
     // --- Mixed ---
