@@ -17,12 +17,14 @@ const logo = {
     'Shell': ['gnu-bash', 'FFFFFF', '4EAA25'],
 
     // --- Local Custom Badges ---
-    'Nano Banana Pro': ['LOCAL', 'banana.png', '#FFD700', '#000000'], 
-    'Veo 3.1':         ['LOCAL', 'veo.png', '#4285F4', '#FFFFFF'],
-    'Suno AI':         ['LOCAL', 'suno.png', '#000000', '#FFFFFF'],
-    'Eleven Labs':     ['LOCAL', '11.png', '#333333', '#FFFFFF'],
-    'Seedream 4.5':    ['LOCAL', 'seedream.png', '#EA4C89', '#FFFFFF'],
-    'VN':              ['LOCAL', 'vn.png', '#0096FF', '#FFFFFF'],
+    'Nano Banana': ['LOCAL', 'banana.png', '#FFD700', '#000000'], 
+    'Veo':         ['LOCAL', 'veo.png', '#4285F4', '#FFFFFF'],
+    'Suno AI':     ['LOCAL', 'suno.png', '#000000', '#FFFFFF'],
+    'Eleven Labs': ['LOCAL', '11.png', '#333333', '#FFFFFF'],
+    'Seedream':    ['LOCAL', 'seedream.png', '#EA4C89', '#FFFFFF'],
+    'VN':          ['LOCAL', 'vn.png', '#0096FF', '#FFFFFF'],
+    'CapCut':      ['LOCAL', 'capcut.png', '#000000', '#FFFFFF'],
+    'Camb.AI':     ['LOCAL', 'camb.png', '#6C47FF', '#FFFFFF'],
     
     // --- Mixed ---
     'Photoshop': ['adobephotoshop', '31A8FF', '001E36'],
