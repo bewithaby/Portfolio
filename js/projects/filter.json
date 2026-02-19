@@ -1,10 +1,17 @@
 [
     {
+        "title": "Read (AI Shortfilm)",
+        "description": "A 1-minute, zero-budget AI commercial that visually captures the boundless power of reading through seamless character and environment transitions.",
+        "url": "https://studio.youtube.com/video/qTOToRxtrRI/edit",
+        "logo": "assets/projects/Read_Eng_Cover.jpg",
+        "languages": ["Nano Banana", "Veo", "Seedance", "Suno AI", "Camb AI", "CapCut"]
+    },
+    {
         "title": "Despite Everything (AI Shortfilm)",
         "description": "Despite Everything is a visual poem that explores the quiet moments of joy found in the midst of struggle.",
         "url": "http://youtube.com/watch?v=NxaVQ67XbiA",
         "logo": "assets/projects/Despite_Everything_Thumbnail.jpeg",
-        "languages": ["Nano Banana Pro", "Veo 3.1", "Suno AI", "Eleven Labs", "VN"]
+        "languages": ["Nano Banana", "Veo", "Suno AI", "Eleven Labs", "VN"]
     },
     {
         "title": "Warranty Management System",
