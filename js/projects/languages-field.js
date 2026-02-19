@@ -22,9 +22,11 @@ const logo = {
     'Suno AI':     ['LOCAL', 'suno.png', '#000000', '#FFFFFF'],
     'Eleven Labs': ['LOCAL', '11.png', '#333333', '#FFFFFF'],
     'Seedream':    ['LOCAL', 'seedream.png', '#EA4C89', '#FFFFFF'],
+    'Seedance':    ['LOCAL', 'seedance.png', '#121212', '#FFFFFF'],
     'VN':          ['LOCAL', 'vn.png', '#0096FF', '#FFFFFF'],
     'CapCut':      ['LOCAL', 'capcut.png', '#000000', '#FFFFFF'],
     'Camb.AI':     ['LOCAL', 'camb.png', '#6C47FF', '#FFFFFF'],
+    'Grok':        ['LOCAL', 'grok.png', '#000000', '#FFFFFF'],
     
     // --- Mixed ---
     'Photoshop': ['adobephotoshop', '31A8FF', '001E36'],
