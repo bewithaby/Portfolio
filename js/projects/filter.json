@@ -1,5 +1,12 @@
 [
     {
+        "title": "Sequency",
+        "description": "An AI-driven video orchestration platform designed to streamline high-fidelity video production workflows.",
+        "url": "https://sequency.cc/",
+        "logo": "assets/projects/sequency_logo.png",
+        "languages": ["Nano Banana", "Veo", "Seedance", "Grok", "Suno AI", "Camb AI", "CapCut"]
+    },
+    {
         "title": "Read (AI Shortfilm)",
         "description": "A 1-minute, zero-budget AI commercial that visually captures the boundless power of reading.",
         "url": "https://www.youtube.com/watch?v=qTOToRxtrRI",
