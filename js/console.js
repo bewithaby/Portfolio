@@ -6,7 +6,7 @@ var aText = new Array(
 "> Hello!",
 "> Glad you stopped by!",
 "> My name is Abhilash Emmanuel.",
-"> I am a Multidisciplinarian from India.", 
+"> I am an adaptable multidisciplinarian.", 
 "> Learning, unlearning, and reinventing every day.",
 "> I am passionate about technology and creative design.",
 "> My Trifecta: AI, Visuals, and PM expertise.",  
