@@ -28,8 +28,8 @@ const logo = {
     
     // --- Badges for AI tools ---
     'Nano Banana': ['LOCAL', 'banana.png', '#FFD700', '#000000'], 
-    'Veo': ['deepmind', '#4285F4', '#FFFFFF'],
-    'Suno AI': ['suno', '#000000', '#FFFFFF'],
+    'Veo': ['deepmind', '4285F4', 'FFFFFF'],
+    'Suno AI': ['suno', '000000', 'FFFFFF'],
     'Eleven Labs': ['elevenlabs', '#333333', '#FFFFFF'],
     'Seedream': ['LOCAL', 'seedream.png', '#EA4C89', '#FFFFFF'],
     'Seedance': ['LOCAL', 'seedance.png', '#121212', '#FFFFFF'],
