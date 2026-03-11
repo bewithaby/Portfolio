@@ -19,18 +19,18 @@ const logo = {
     'Java': ['java', 'f89820', 'ebebeb'],
     'Shell': ['gnu-bash', 'FFFFFF', '4EAA25'],
 
-    // --- Added Modern AI & Web Stack ---
+    // --- Modern AI & Web Stack ---
     'Next.js': ['nextdotjs', '000000', 'FFFFFF'],
     'Lovable': ['LOCAL', 'lovable.png', 'FF4F00', 'FFFFFF'],
     'Cursor': ['cursor', '5AC2FF', '1A1A1A'],
     'Antigravity': ['LOCAL', 'antigravity.png', '000000', 'FFFFFF'],
     'Claude Code': ['anthropic', 'D97757', 'FFFFFF'],
     
-    // --- Local Custom Badges ---
+    // --- Badges for AI tools ---
     'Nano Banana': ['LOCAL', 'banana.png', '#FFD700', '#000000'], 
-    'Veo':         ['LOCAL', 'veo.png', '#4285F4', '#FFFFFF'],
-    'Suno AI':     ['LOCAL', 'suno.png', '#000000', '#FFFFFF'],
-    'Eleven Labs': ['LOCAL', '11.png', '#333333', '#FFFFFF'],
+    'Veo':         ['deepmind', '#4285F4', '#FFFFFF'],
+    'Suno AI':     ['suno', '#000000', '#FFFFFF'],
+    'Eleven Labs': ['elevenlabs', '#333333', '#FFFFFF'],
     'Seedream':    ['LOCAL', 'seedream.png', '#EA4C89', '#FFFFFF'],
     'Seedance':    ['LOCAL', 'seedance.png', '#121212', '#FFFFFF'],
     'VN':          ['LOCAL', 'vn.png', '#0096FF', '#FFFFFF'],
