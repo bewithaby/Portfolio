@@ -16,6 +16,13 @@ const logo = {
     'Java': ['java', 'f89820', 'ebebeb'],
     'Shell': ['gnu-bash', 'FFFFFF', '4EAA25'],
 
+    // --- Added Modern AI & Web Stack ---
+    'Next.js': ['nextdotjs', '000000', 'FFFFFF'],
+    'Lovable': ['lovable', 'FF4F00', 'FFFFFF'],
+    'Cursor': ['cursor', '5AC2FF', '1A1A1A'],
+    'Antigravity': ['antigravity', '000000', 'FFFFFF'],
+    'Claude Code': ['anthropic', 'D97757', 'FFFFFF'],
+    
     // --- Local Custom Badges ---
     'Nano Banana': ['LOCAL', 'banana.png', '#FFD700', '#000000'], 
     'Veo':         ['LOCAL', 'veo.png', '#4285F4', '#FFFFFF'],
