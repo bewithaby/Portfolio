@@ -1,6 +1,9 @@
 const badgeBaseURL = 'https://img.shields.io/badge/';
 const badgeStyle = 'for-the-badge';
 
+// View available icons: https://simpleicons.org/
+// List of icons and slugs: https://github.com/simple-icons/simple-icons/blob/master/slugs.md
+
 // Format 1 (Standard): 'Tag Name': ['SimpleIconsSlug', 'LogoColor', 'BackgroundColor']
 // Format 2 (Local):    'Tag Name': ['LOCAL', 'filename.png', 'BackgroundColor', 'TextColor']
 const logo = {
@@ -18,9 +21,9 @@ const logo = {
 
     // --- Added Modern AI & Web Stack ---
     'Next.js': ['nextdotjs', '000000', 'FFFFFF'],
-    'Lovable': ['LOCAL', 'FF4F00', 'FFFFFF'],
+    'Lovable': ['LOCAL', 'lovable.png', 'FF4F00', 'FFFFFF'],
     'Cursor': ['cursor', '5AC2FF', '1A1A1A'],
-    'Antigravity': ['LOCAL', '000000', 'FFFFFF'],
+    'Antigravity': ['LOCAL', 'antigravity.png', '000000', 'FFFFFF'],
     'Claude Code': ['anthropic', 'D97757', 'FFFFFF'],
     
     // --- Local Custom Badges ---
