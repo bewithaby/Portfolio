@@ -18,9 +18,9 @@ const logo = {
 
     // --- Added Modern AI & Web Stack ---
     'Next.js': ['nextdotjs', '000000', 'FFFFFF'],
-    'Lovable': ['lovable', 'FF4F00', 'FFFFFF'],
+    'Lovable': ['LOCAL', 'FF4F00', 'FFFFFF'],
     'Cursor': ['cursor', '5AC2FF', '1A1A1A'],
-    'Antigravity': ['antigravity', '000000', 'FFFFFF'],
+    'Antigravity': ['LOCAL', '000000', 'FFFFFF'],
     'Claude Code': ['anthropic', 'D97757', 'FFFFFF'],
     
     // --- Local Custom Badges ---
