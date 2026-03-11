@@ -28,15 +28,15 @@ const logo = {
     
     // --- Badges for AI tools ---
     'Nano Banana': ['LOCAL', 'banana.png', '#FFD700', '#000000'], 
-    'Veo':         ['deepmind', '#4285F4', '#FFFFFF'],
-    'Suno AI':     ['suno', '#000000', '#FFFFFF'],
+    'Veo': ['deepmind', '#4285F4', '#FFFFFF'],
+    'Suno AI': ['suno', '#000000', '#FFFFFF'],
     'Eleven Labs': ['elevenlabs', '#333333', '#FFFFFF'],
-    'Seedream':    ['LOCAL', 'seedream.png', '#EA4C89', '#FFFFFF'],
-    'Seedance':    ['LOCAL', 'seedance.png', '#121212', '#FFFFFF'],
-    'VN':          ['LOCAL', 'vn.png', '#0096FF', '#FFFFFF'],
-    'CapCut':      ['LOCAL', 'capcut.png', '#000000', '#FFFFFF'],
-    'Camb.AI':     ['LOCAL', 'cambai.png', '#6C47FF', '#FFFFFF'],
-    'Grok':        ['LOCAL', 'grok.png', '#000000', '#FFFFFF'],
+    'Seedream': ['LOCAL', 'seedream.png', '#EA4C89', '#FFFFFF'],
+    'Seedance': ['LOCAL', 'seedance.png', '#121212', '#FFFFFF'],
+    'VN': ['LOCAL', 'vn.png', '#0096FF', '#FFFFFF'],
+    'CapCut': ['LOCAL', 'capcut.png', '#000000', '#FFFFFF'],
+    'Camb.AI': ['LOCAL', 'cambai.png', '#6C47FF', '#FFFFFF'],
+    'Grok': ['LOCAL', 'grok.png', '#000000', '#FFFFFF'],
     
     // --- Mixed ---
     'Photoshop': ['adobephotoshop', '31A8FF', '001E36'],
