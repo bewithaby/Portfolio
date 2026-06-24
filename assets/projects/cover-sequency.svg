@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" fill="none">
+  <defs>
+    <radialGradient id="glow" cx="76%" cy="20%" r="64%">
+      <stop offset="0" stop-color="#e7a93b" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#e7a93b" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="46" height="46" patternUnits="userSpaceOnUse">
+      <path d="M46 0H0V46" stroke="#22344b" stroke-opacity="0.4" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="flow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2dd4bf"/>
+      <stop offset="0.6" stop-color="#e7a93b"/>
+      <stop offset="1" stop-color="#f2c878"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="#0d1521"/>
+  <rect width="800" height="500" fill="url(#grid)"/>
+  <rect width="800" height="500" fill="url(#glow)"/>
+
+  <!-- flow line through the sequence -->
+  <path d="M90 300 C 230 300, 230 300, 366 300 S 640 300, 710 300" stroke="url(#flow)" stroke-width="3" opacity="0.85"/>
+  <path d="M70 120 C 240 70, 430 200, 610 120 S 760 150, 780 120" stroke="#2dd4bf" stroke-width="2" opacity="0.25"/>
+
+  <!-- film-strip frames = a sequence -->
+  <g>
+    <rect x="90"  y="150" width="120" height="110" rx="12" fill="#16243a" stroke="#22344b"/>
+    <rect x="226" y="150" width="120" height="110" rx="12" fill="#16243a" stroke="#22344b"/>
+    <rect x="362" y="150" width="120" height="110" rx="12" fill="#16243a" stroke="#2c4262"/>
+    <rect x="498" y="150" width="120" height="110" rx="12" fill="#16243a" stroke="#2c4262"/>
+    <rect x="634" y="150" width="120" height="110" rx="12" fill="#e7a93b" stroke="#e7a93b"/>
+    <!-- inner hints -->
+    <rect x="104" y="164" width="92" height="60" rx="6" fill="#0d1521" opacity="0.6"/>
+    <rect x="240" y="164" width="92" height="60" rx="6" fill="#0d1521" opacity="0.6"/>
+    <rect x="376" y="164" width="92" height="60" rx="6" fill="#0d1521" opacity="0.6"/>
+    <rect x="512" y="164" width="92" height="60" rx="6" fill="#0d1521" opacity="0.6"/>
+    <!-- play triangle on the final amber frame -->
+    <path d="M676 185 L706 205 L676 225 Z" fill="#0d1521"/>
+    <!-- frame index numbers -->
+    <text x="104" y="250" font-family="ui-monospace,monospace" font-size="13" fill="#56708f">01</text>
+    <text x="240" y="250" font-family="ui-monospace,monospace" font-size="13" fill="#56708f">02</text>
+    <text x="376" y="250" font-family="ui-monospace,monospace" font-size="13" fill="#8da3bd">03</text>
+    <text x="512" y="250" font-family="ui-monospace,monospace" font-size="13" fill="#8da3bd">04</text>
+    <text x="648" y="250" font-family="ui-monospace,monospace" font-size="13" fill="#0d1521">05</text>
+    <!-- nodes on the flow -->
+    <circle cx="150" cy="300" r="6" fill="#2dd4bf"/>
+    <circle cx="286" cy="300" r="6" fill="#56708f"/>
+    <circle cx="422" cy="300" r="6" fill="#8da3bd"/>
+    <circle cx="558" cy="300" r="6" fill="#f2c878"/>
+    <circle cx="694" cy="300" r="7" fill="#e7a93b"/>
+  </g>
+
+  <text x="90" y="410" font-family="ui-monospace,monospace" font-size="16" letter-spacing="4" fill="#f2c878">AI VIDEO ORCHESTRATION</text>
+  <text x="90" y="438" font-family="ui-monospace,monospace" font-size="13" letter-spacing="2" fill="#56708f">success is a sequence</text>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" fill="none">
+  <defs>
+    <radialGradient id="glowP" cx="74%" cy="24%" r="62%">
+      <stop offset="0" stop-color="#e7a93b" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#e7a93b" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="gridP" width="46" height="46" patternUnits="userSpaceOnUse">
+      <path d="M46 0H0V46" stroke="#22344b" stroke-opacity="0.4" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="500" fill="#0d1521"/>
+  <rect width="800" height="500" fill="url(#gridP)"/>
+  <rect width="800" height="500" fill="url(#glowP)"/>
+
+  <!-- browser window -->
+  <rect x="120" y="96" width="560" height="296" rx="16" fill="#121d2e" stroke="#2c4262"/>
+  <!-- title bar -->
+  <path d="M120 112 a16 16 0 0 1 16 -16 h528 a16 16 0 0 1 16 16 v34 h-560 z" fill="#16243a"/>
+  <circle cx="150" cy="129" r="6" fill="#ff6b4d"/>
+  <circle cx="172" cy="129" r="6" fill="#e7a93b"/>
+  <circle cx="194" cy="129" r="6" fill="#3ddc84"/>
+  <rect x="300" y="120" width="200" height="18" rx="9" fill="#0d1521"/>
+  <text x="316" y="133" font-family="ui-monospace,monospace" font-size="11" fill="#56708f">abhilash.dev</text>
+
+  <!-- content: code brackets + lines -->
+  <text x="300" y="288" font-family="ui-monospace,monospace" font-size="96" font-weight="700" fill="#e7a93b" opacity="0.92">&lt;/&gt;</text>
+
+  <g>
+    <rect x="160" y="186" width="92" height="9" rx="4.5" fill="#e7a93b"/>
+    <rect x="160" y="208" width="60" height="8" rx="4" fill="#8da3bd"/>
+    <rect x="160" y="228" width="78" height="8" rx="4" fill="#56708f"/>
+    <rect x="160" y="300" width="70" height="8" rx="4" fill="#2dd4bf"/>
+    <rect x="160" y="320" width="48" height="8" rx="4" fill="#56708f"/>
+
+    <rect x="548" y="300" width="96" height="9" rx="4.5" fill="#8da3bd"/>
+    <rect x="572" y="320" width="72" height="8" rx="4" fill="#56708f"/>
+    <!-- amber cursor -->
+    <rect x="556" y="186" width="12" height="22" rx="2" fill="#e7a93b"/>
+  </g>
+
+  <text x="120" y="416" font-family="ui-monospace,monospace" font-size="16" letter-spacing="4" fill="#f2c878">WEB · DESIGN</text>
+  <text x="120" y="444" font-family="ui-monospace,monospace" font-size="13" letter-spacing="2" fill="#56708f">hand-built · no build step</text>
+</svg>

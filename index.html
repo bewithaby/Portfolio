@@ -45,13 +45,14 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .eyebrow{font-size:12px;letter-spacing:.22em;color:var(--amber);margin-bottom:20px;text-transform:uppercase}
 .idrow{display:flex;align-items:center;gap:16px;margin-bottom:26px}
 .av{position:relative;width:60px;height:60px;flex:none}
-.av .pic{width:60px;height:60px;border-radius:50%;background:var(--ink-3);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--faint);font-size:9px;letter-spacing:.06em;overflow:hidden;text-align:center}
-.av .pic img{width:100%;height:100%;object-fit:cover}
-.av .status{position:absolute;bottom:-2px;right:-2px;height:18px;display:flex;align-items:center;background:var(--green);color:#062b15;border:3px solid var(--ink);border-radius:20px;overflow:hidden;width:18px;transition:width .35s cubic-bezier(.5,.1,.2,1);white-space:nowrap}
+.av .pic{width:60px;height:60px;border-radius:50%;background:var(--ink-3);border:1px solid var(--line-2);display:flex;align-items:center;justify-content:center;color:var(--faint);font-size:9px;letter-spacing:.06em;overflow:hidden;text-align:center;box-shadow:0 0 0 3px rgba(231,169,59,.16),0 6px 18px rgba(0,0,0,.4)}
+.av .pic img{width:100%;height:100%;object-fit:cover;filter:grayscale(.4) contrast(1.05) brightness(.98);transition:filter .35s}
+.av:hover .pic img{filter:grayscale(0) contrast(1.02)}
+.av .status{position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);height:18px;display:flex;align-items:center;justify-content:flex-start;background:var(--green);color:#062b15;border:3px solid var(--ink);border-radius:20px;overflow:hidden;width:18px;transition:width .35s cubic-bezier(.5,.1,.2,1);white-space:nowrap;z-index:2}
 .av .status .dot{width:18px;flex:none;display:flex;align-items:center;justify-content:center}
 .av .status .dot::before{content:"";width:7px;height:7px;border-radius:50%;background:#062b15}
 .av .status .txt{font-family:'JetBrains Mono';font-size:10px;font-weight:700;letter-spacing:.04em;opacity:0;transition:opacity .25s;padding-right:12px}
-.av:hover .status{width:154px}
+.av:hover .status{width:172px}
 .av:hover .status .txt{opacity:1;transition-delay:.12s}
 .idrow .who .nm{font-weight:500;font-size:15px}
 .idrow .who .rl{font-size:13px;color:var(--muted)}
@@ -101,7 +102,7 @@ section{padding:84px 0;border-bottom:1px solid var(--line)}
 .pcard:hover{transform:translateY(-6px);border-color:var(--line-2)}
 .pcard .cover{aspect-ratio:16/10;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--ink-3),var(--ink-2))}
 .pcard .cover .cov{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s}
-.pcard:hover .cover .cov{transform:scale(1.06)}
+.pcard:hover .cover .cov{transform:scale(1.04)}
 .pcard .cover .tagrow{position:absolute;left:14px;top:14px;display:flex;gap:7px;z-index:2}
 .pcard .cover .tagrow span{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.06em;background:rgba(13,21,33,.8);border:1px solid var(--line);color:var(--amber-soft);padding:5px 9px;border-radius:20px}
 .pcard .cover .open{position:absolute;right:14px;bottom:14px;width:36px;height:36px;border-radius:50%;background:var(--amber);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:18px;opacity:0;transform:scale(.6);transition:all .25s;z-index:2}
@@ -172,10 +173,12 @@ section{padding:84px 0;border-bottom:1px solid var(--line)}
 
 /* photography */
 .gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:148px;gap:12px}
-.shot{background:var(--ink-2);border:1px solid var(--line);border-radius:10px;display:flex;align-items:flex-end;padding:12px;color:var(--faint);font-size:11px;letter-spacing:.06em;position:relative;overflow:hidden;font-family:'JetBrains Mono';transition:transform .3s}
-.shot::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 14px,rgba(34,52,75,.5) 14px,rgba(34,52,75,.5) 15px)}
-.shot:hover{transform:translateY(-4px)}
-.shot span{position:relative;z-index:1}
+.shot{background:var(--ink-2);border:1px solid var(--line);border-radius:10px;display:flex;align-items:flex-end;padding:12px;color:var(--text);font-size:11px;letter-spacing:.06em;position:relative;overflow:hidden;font-family:'JetBrains Mono';transition:transform .3s,border-color .3s}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;filter:grayscale(.12) brightness(.9);transition:transform .4s,filter .4s}
+.shot::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(transparent 48%,rgba(13,21,33,.86))}
+.shot:hover{transform:translateY(-4px);border-color:var(--line-2)}
+.shot:hover img{transform:scale(1.05);filter:none}
+.shot span{position:relative;z-index:2}
 .shot.big{grid-column:span 2;grid-row:span 2}.shot.tall{grid-row:span 2}
 .gallink{margin-top:24px;display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono';font-size:13px;color:var(--amber);border:1px solid var(--amber);padding:12px 22px;border-radius:8px;transition:all .2s}
 .gallink:hover{background:var(--amber);color:var(--ink)}
@@ -208,8 +211,8 @@ footer{padding:30px 0;text-align:center;color:var(--faint);font-size:12px;font-f
 <nav><div class="wrap">
   <div class="brand mono">AE<span>.</span></div>
   <div class="navlinks mono">
-    <a href="#projects">projects</a><a href="#experience">experience</a><a href="#education">education</a>
-    <a href="#films">films</a><a href="#skills">skills</a><a href="photography.html">photography</a><a href="#contact">contact</a>
+    <a href="#projects">projects</a><a href="#skills">stack</a><a href="#experience">experience</a><a href="#education">education</a>
+    <a href="#films">films</a><a href="photography.html">photography</a><a href="#contact">contact</a>
   </div>
   <a href="assets/CV.pdf" target="_blank" rel="noopener" class="cv-btn mono">Get CV</a>
 </div></nav>
@@ -218,9 +221,9 @@ footer{padding:30px 0;text-align:center;color:var(--faint);font-size:12px;font-f
   <div>
     <div class="eyebrow mono">AI Consultant · Technical PM · Designer</div>
     <div class="idrow">
-      <div class="av" title="Open to work">
+      <div class="av" title="Open to Collaborate">
         <div class="pic mono"><img src="assets/propic.jpg" alt="Abhilash Emmanuel"></div>
-        <div class="status"><span class="dot"></span><span class="txt">OPEN TO WORK</span></div>
+        <div class="status"><span class="dot"></span><span class="txt">OPEN TO COLLABORATE</span></div>
       </div>
       <div class="who"><div class="nm">Abhilash Emmanuel</div><div class="rl mono">Wollongong, NSW</div></div>
     </div>
@@ -249,53 +252,26 @@ footer{padding:30px 0;text-align:center;color:var(--faint);font-size:12px;font-f
   <div class="shead"><span class="num mono">01</span><h2>Recent projects</h2><div class="line"></div><span class="more mono">click to open ↗</span></div>
   <div class="pgrid" id="pgrid">
     <div class="pcard" data-proj="sequency">
-      <div class="cover"><img class="cov" src="assets/projects/sequency_logo.png" alt="Sequency"><div class="tagrow"><span>AI</span><span>Product</span></div><div class="open">↗</div></div>
+      <div class="cover"><img class="cov" src="assets/projects/cover-sequency.svg" alt="Sequency"><div class="tagrow"><span>AI</span><span>Product</span></div><div class="open">↗</div></div>
       <div class="pad"><div class="role mono">Founder · AI Architect</div><h3>Sequency</h3></div>
     </div>
     <div class="pcard" data-proj="warranty">
-      <div class="cover"><img class="cov" src="assets/projects/warranty.png" alt="Warranty Management System"><div class="tagrow"><span>n8n</span><span>Automation</span></div><div class="open">↗</div></div>
+      <div class="cover"><img class="cov" src="assets/projects/cover-warranty.svg" alt="Warranty Management System"><div class="tagrow"><span>n8n</span><span>Automation</span></div><div class="open">↗</div></div>
       <div class="pad"><div class="role mono">AI Automation</div><h3>Warranty Management System</h3></div>
     </div>
     <div class="pcard" data-proj="assistant">
-      <div class="cover"><img class="cov" src="assets/projects/assistant.png" alt="Personal Assistant"><div class="tagrow"><span>n8n</span><span>Agent</span></div><div class="open">↗</div></div>
+      <div class="cover"><img class="cov" src="assets/projects/cover-assistant.svg" alt="Personal Assistant"><div class="tagrow"><span>n8n</span><span>Agent</span></div><div class="open">↗</div></div>
       <div class="pad"><div class="role mono">AI Automation</div><h3>Personal Assistant</h3></div>
     </div>
     <div class="pcard" data-proj="portfolio">
-      <div class="cover"><img class="cov" src="assets/projects/portfolio.png" alt="Portfolio"><div class="tagrow"><span>Web</span><span>Design</span></div><div class="open">↗</div></div>
+      <div class="cover"><img class="cov" src="assets/projects/cover-portfolio.svg" alt="Portfolio"><div class="tagrow"><span>Web</span><span>Design</span></div><div class="open">↗</div></div>
       <div class="pad"><div class="role mono">Design · Front-end</div><h3>This Portfolio</h3></div>
     </div>
   </div>
 </div></section>
 
-<section id="experience"><div class="wrap">
-  <div class="shead"><span class="num mono">02</span><h2>Where I've worked</h2><div class="line"></div></div>
-  <div class="tl">
-    <div class="job now"><div class="when">2026 — Now</div><div><div class="co"><div class="lg">SQ</div><div><div class="nm">Sequency</div><div class="role mono">Co-founder · AI Architect</div></div></div><ul><li>Building an AI video orchestration platform from zero to one.</li><li>System design, multi-phase generation pipeline, product direction.</li></ul></div></div>
-    <div class="job now"><div class="when">2023 — Now</div><div><div class="co"><div class="lg">AI</div><div><div class="nm">Freelance &amp; Consulting</div><div class="role mono">AI Solutions Architect</div></div></div><ul><li>AI strategy, LLM/RAG/agent systems, and automation for clients.</li><li>From advisory to hands-on implementation.</li></ul></div></div>
-    <div class="job"><div class="when">2020 — 2023</div><div><div class="co"><div class="lg">AK</div><div><div class="nm">Akamai Technologies</div><div class="role mono">Technical Project Manager</div></div></div><ul><li>Led cross-functional delivery of complex technical programs.</li><li>Agile planning, risk management, predictable outcomes.</li></ul></div></div>
-    <div class="job"><div class="when">2009 — 2020</div><div><div class="co"><div class="lg">IN</div><div><div class="nm">Infosys Ltd.</div><div class="role mono">Technology Lead → Systems Engineer Trainee</div></div></div><ul><li>A decade of progression across delivery and engineering roles.</li><li>US on-site delivery in Chicago; analyst and lead positions.</li></ul></div></div>
-  </div>
-</div></section>
-
-<section id="education"><div class="wrap">
-  <div class="shead"><span class="num mono">03</span><h2>Education</h2><div class="line"></div></div>
-  <div class="tl">
-    <div class="job"><div class="when">2020 — 2022</div><div><div class="co"><div class="lg logo"><img src="assets/timeline/unomlogo.png" alt="University of Madras"></div><div><div class="nm">M.Sc. Cyber Forensics &amp; Information Security</div><div class="role mono">University of Madras</div></div></div></div></div>
-    <div class="job"><div class="when">2005 — 2009</div><div><div class="co"><div class="lg logo"><img src="assets/timeline/mglogo.png" alt="Mahatma Gandhi University"></div><div><div class="nm">B.Tech Applied Electronics &amp; Instrumentation</div><div class="role mono">Mahatma Gandhi University</div></div></div></div></div>
-  </div>
-</div></section>
-
-<section id="films"><div class="wrap">
-  <div class="shead"><span class="num mono">04</span><h2>AI films I directed</h2><div class="line"></div></div>
-  <div class="vgrid">
-    <div class="vid"><div class="fr"><iframe src="https://www.youtube-nocookie.com/embed/qTOToRxtrRI" title="Read, AI short film" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="cap"><b>Read</b><span class="t mono">AI short film · 1 min</span></div></div>
-    <div class="vid"><div class="fr"><iframe src="https://www.youtube-nocookie.com/embed/NxaVQ67XbiA" title="Despite Everything, AI short film" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="cap"><b>Despite Everything</b><span class="t mono">AI short film · visual poem</span></div></div>
-  </div>
-  <p class="note mono">// short films built end to end with generative AI · more on <a href="https://www.youtube.com/@Abhilash_Emmanuel" style="color:var(--amber)">YouTube</a></p>
-</div></section>
-
 <section id="skills"><div class="wrap">
-  <div class="shead"><span class="num mono">05</span><h2>The stack</h2><div class="line"></div></div>
+  <div class="shead"><span class="num mono">02</span><h2>The stack</h2><div class="line"></div></div>
   <div class="skill-cat"><div class="ch mono">AI &amp; ML</div><div class="chips">
     <span class="chip"><span class="ph2">AI</span>LLMs &amp; Agents</span>
     <span class="chip"><span class="ph2">RAG</span>RAG &amp; MCP</span>
@@ -324,15 +300,43 @@ footer{padding:30px 0;text-align:center;color:var(--faint);font-size:12px;font-f
   </div></div>
 </div></section>
 
+<section id="experience"><div class="wrap">
+  <div class="shead"><span class="num mono">03</span><h2>Where I've worked</h2><div class="line"></div></div>
+  <div class="tl">
+    <div class="job now"><div class="when">2026 — Now</div><div><div class="co"><div class="lg">SQ</div><div><div class="nm">Sequency</div><div class="role mono">Co-founder · AI Architect</div></div></div><ul><li>Building an AI video orchestration platform from zero to one.</li><li>System design, multi-phase generation pipeline, product direction.</li></ul></div></div>
+    <div class="job now"><div class="when">2023 — Now</div><div><div class="co"><div class="lg">AI</div><div><div class="nm">Freelance &amp; Consulting</div><div class="role mono">AI Solutions Architect</div></div></div><ul><li>AI strategy, LLM/RAG/agent systems, and automation for clients.</li><li>From advisory to hands-on implementation.</li></ul></div></div>
+    <div class="job"><div class="when">2020 — 2023</div><div><div class="co"><div class="lg">AK</div><div><div class="nm">Akamai Technologies</div><div class="role mono">Technical Project Manager</div></div></div><ul><li>Led cross-functional delivery of complex technical programs.</li><li>Agile planning, risk management, predictable outcomes.</li></ul></div></div>
+    <div class="job"><div class="when">2009 — 2020</div><div><div class="co"><div class="lg">IN</div><div><div class="nm">Infosys Ltd.</div><div class="role mono">Technology Lead → Systems Engineer Trainee</div></div></div><ul><li>A decade of progression across delivery and engineering roles.</li><li>US on-site delivery in Chicago; analyst and lead positions.</li></ul></div></div>
+  </div>
+</div></section>
+
+<section id="education"><div class="wrap">
+  <div class="shead"><span class="num mono">04</span><h2>Education</h2><div class="line"></div></div>
+  <div class="tl">
+    <div class="job"><div class="when">2020 — 2022</div><div><div class="co"><div class="lg logo"><img src="assets/timeline/unomlogo.png" alt="University of Madras"></div><div><div class="nm">M.Sc. Cyber Forensics &amp; Information Security</div><div class="role mono">University of Madras</div></div></div></div></div>
+    <div class="job"><div class="when">2005 — 2009</div><div><div class="co"><div class="lg logo"><img src="assets/timeline/mglogo.png" alt="Mahatma Gandhi University"></div><div><div class="nm">B.Tech Applied Electronics &amp; Instrumentation</div><div class="role mono">Mahatma Gandhi University</div></div></div></div></div>
+  </div>
+</div></section>
+
+<section id="films"><div class="wrap">
+  <div class="shead"><span class="num mono">05</span><h2>AI films I directed</h2><div class="line"></div></div>
+  <div class="vgrid">
+    <div class="vid"><div class="fr"><iframe src="https://www.youtube-nocookie.com/embed/qTOToRxtrRI" title="Read, AI short film" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="cap"><b>Read</b><span class="t mono">AI short film · 1 min</span></div></div>
+    <div class="vid"><div class="fr"><iframe src="https://www.youtube-nocookie.com/embed/NxaVQ67XbiA" title="Despite Everything, AI short film" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="cap"><b>Despite Everything</b><span class="t mono">AI short film · visual poem</span></div></div>
+  </div>
+  <p class="note mono">// short films built end to end with generative AI · more on <a href="https://www.youtube.com/@Abhilash_Emmanuel" style="color:var(--amber)">YouTube</a></p>
+</div></section>
+
+
 <section id="photo"><div class="wrap">
   <div class="shead"><span class="num mono">06</span><h2>Through the lens</h2><div class="line"></div><a href="photography.html" class="more mono">full gallery →</a></div>
   <div class="gal">
-    <div class="shot big"><span>featured · 01</span></div>
-    <div class="shot"><span>street</span></div>
-    <div class="shot"><span>portrait</span></div>
-    <div class="shot tall"><span>landscape</span></div>
-    <div class="shot"><span>light</span></div>
-    <div class="shot"><span>detail</span></div>
+    <div class="shot big"><img src="assets/photography/lake%20view.jpg" alt="Lake View" loading="lazy"><span>Lake View</span></div>
+    <div class="shot tall"><img src="assets/photography/Ansel.jpg" alt="Portrait" loading="lazy"><span>Ansel</span></div>
+    <div class="shot"><img src="assets/photography/flight.jpg" alt="In Flight" loading="lazy"><span>In Flight</span></div>
+    <div class="shot"><img src="assets/photography/Chicago-night.jpg" alt="Chicago Night" loading="lazy"><span>Chicago Night</span></div>
+    <div class="shot"><img src="assets/photography/water-lily.jpg" alt="Water Lily" loading="lazy"><span>Water Lily</span></div>
+    <div class="shot"><img src="assets/photography/carpenter-bee.jpg" alt="Carpenter Bee" loading="lazy"><span>Carpenter Bee</span></div>
   </div>
   <a href="photography.html" class="gallink mono">View the full photography gallery →</a>
 </div></section>
@@ -416,13 +420,13 @@ document.querySelectorAll('.chip').forEach((el,i)=>{el.style.transitionDelay=((i
 
 /* ---- project modal ---- */
 const PROJ={
-  sequency:{role:'Founder · AI Architect',title:'Sequency',scope:['Next.js','Python','Lovable','Cursor','Antigravity'],cover:'assets/projects/sequency_logo.png',link:'https://sequency.cc/',
+  sequency:{role:'Founder · AI Architect',title:'Sequency',scope:['Next.js','Python','Lovable','Cursor','Antigravity'],cover:'assets/projects/cover-sequency.svg',link:'https://sequency.cc/',
     desc:'<p>An AI-driven video orchestration platform designed to streamline high-fidelity video production workflows.</p><p><b>The build.</b> A multi-phase orchestration pipeline that plans, generates images, then video, with continuity logic holding the sequence together.</p>'},
-  warranty:{role:'AI Automation',title:'Warranty Management System',scope:['n8n','JavaScript','HTML'],cover:'assets/projects/warranty.png',link:'https://github.com/bewithaby/Warranty-Management-System-n8n',
+  warranty:{role:'AI Automation',title:'Warranty Management System',scope:['n8n','JavaScript','HTML'],cover:'assets/projects/cover-warranty.svg',link:'https://github.com/bewithaby/Warranty-Management-System-n8n',
     desc:'<p>A system to manage warranties efficiently using n8n workflows, turning manual tracking into reliable automation.</p>'},
-  assistant:{role:'AI Automation',title:'Personal Assistant',scope:['n8n','JavaScript','HTML'],cover:'assets/projects/assistant.png',link:'https://github.com/bewithaby/Personal-Assistant-n8n',
+  assistant:{role:'AI Automation',title:'Personal Assistant',scope:['n8n','JavaScript','HTML'],cover:'assets/projects/cover-assistant.svg',link:'https://github.com/bewithaby/Personal-Assistant-n8n',
     desc:'<p>An autonomous personal AI assistant built on n8n, wiring LLMs into real day-to-day workflows.</p>'},
-  portfolio:{role:'Design · Front-end',title:'This Portfolio',scope:['HTML','CSS','JavaScript'],cover:'assets/projects/portfolio.png',link:'https://github.com/bewithaby/abhilash-portfolio',
+  portfolio:{role:'Design · Front-end',title:'This Portfolio',scope:['HTML','CSS','JavaScript'],cover:'assets/projects/cover-portfolio.svg',link:'https://github.com/bewithaby/abhilash-portfolio',
     desc:'<p>The dark, dependency-light site you are reading now. Hand-built, no framework, no build step.</p>'}
 };
 const modal=document.getElementById('modal');

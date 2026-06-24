@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" fill="none">
+  <defs>
+    <radialGradient id="glowW" cx="24%" cy="22%" r="64%">
+      <stop offset="0" stop-color="#3ddc84" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#3ddc84" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="gridW" width="46" height="46" patternUnits="userSpaceOnUse">
+      <path d="M46 0H0V46" stroke="#22344b" stroke-opacity="0.4" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="500" fill="#0d1521"/>
+  <rect width="800" height="500" fill="url(#gridW)"/>
+  <rect width="800" height="500" fill="url(#glowW)"/>
+
+  <!-- workflow connectors (n8n style) -->
+  <path d="M158 230 C 210 230, 210 170, 268 170" stroke="#e7a93b" stroke-width="2.5" opacity="0.8"/>
+  <path d="M158 230 C 210 230, 210 300, 268 300" stroke="#2dd4bf" stroke-width="2.5" opacity="0.7"/>
+  <path d="M412 170 C 470 170, 470 230, 528 230" stroke="#e7a93b" stroke-width="2.5" opacity="0.8"/>
+  <path d="M412 300 C 470 300, 470 230, 528 230" stroke="#2dd4bf" stroke-width="2.5" opacity="0.7"/>
+
+  <!-- trigger node -->
+  <circle cx="130" cy="230" r="30" fill="#16243a" stroke="#e7a93b" stroke-width="2"/>
+  <path d="M122 230 L150 230 M138 218 L150 230 L138 242" stroke="#e7a93b" stroke-width="2.5" fill="none"/>
+
+  <!-- workflow step nodes -->
+  <rect x="270" y="138" width="142" height="64" rx="12" fill="#121d2e" stroke="#2c4262"/>
+  <circle cx="296" cy="170" r="7" fill="#e7a93b"/>
+  <rect x="314" y="160" width="80" height="7" rx="3.5" fill="#8da3bd"/>
+  <rect x="314" y="176" width="54" height="6" rx="3" fill="#56708f"/>
+
+  <rect x="270" y="268" width="142" height="64" rx="12" fill="#121d2e" stroke="#2c4262"/>
+  <circle cx="296" cy="300" r="7" fill="#2dd4bf"/>
+  <rect x="314" y="290" width="80" height="7" rx="3.5" fill="#8da3bd"/>
+  <rect x="314" y="306" width="54" height="6" rx="3" fill="#56708f"/>
+
+  <!-- shield with check = warranty -->
+  <path d="M610 150 L686 178 V236 C686 286, 648 312, 610 330 C572 312, 534 286, 534 236 V178 Z"
+        fill="#16243a" stroke="#e7a93b" stroke-width="2.5"/>
+  <path d="M582 236 L604 258 L646 206" stroke="#3ddc84" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <text x="90" y="406" font-family="ui-monospace,monospace" font-size="16" letter-spacing="4" fill="#f2c878">WORKFLOW AUTOMATION</text>
+  <text x="90" y="434" font-family="ui-monospace,monospace" font-size="13" letter-spacing="2" fill="#56708f">n8n · warranties on autopilot</text>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" fill="none">
+  <defs>
+    <radialGradient id="glowA" cx="50%" cy="40%" r="55%">
+      <stop offset="0" stop-color="#4d94ff" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#4d94ff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="gridA" width="46" height="46" patternUnits="userSpaceOnUse">
+      <path d="M46 0H0V46" stroke="#22344b" stroke-opacity="0.4" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="500" fill="#0d1521"/>
+  <rect width="800" height="500" fill="url(#gridA)"/>
+  <rect width="800" height="500" fill="url(#glowA)"/>
+
+  <!-- radiating connections from the agent hub -->
+  <g stroke-width="2" opacity="0.7">
+    <line x1="400" y1="215" x2="210" y2="120" stroke="#2dd4bf"/>
+    <line x1="400" y1="215" x2="170" y2="240" stroke="#4d94ff"/>
+    <line x1="400" y1="215" x2="232" y2="320" stroke="#8da3bd"/>
+    <line x1="400" y1="215" x2="590" y2="120" stroke="#f2c878"/>
+    <line x1="400" y1="215" x2="630" y2="240" stroke="#e7a93b"/>
+    <line x1="400" y1="215" x2="568" y2="320" stroke="#8da3bd"/>
+  </g>
+
+  <!-- satellite task nodes -->
+  <g>
+    <circle cx="210" cy="120" r="16" fill="#121d2e" stroke="#2dd4bf"/>
+    <circle cx="170" cy="240" r="16" fill="#121d2e" stroke="#4d94ff"/>
+    <circle cx="232" cy="320" r="16" fill="#121d2e" stroke="#2c4262"/>
+    <circle cx="590" cy="120" r="16" fill="#121d2e" stroke="#f2c878"/>
+    <circle cx="630" cy="240" r="16" fill="#121d2e" stroke="#e7a93b"/>
+    <circle cx="568" cy="320" r="16" fill="#121d2e" stroke="#2c4262"/>
+  </g>
+
+  <!-- central agent hub -->
+  <rect x="338" y="153" width="124" height="124" rx="26" fill="#16243a" stroke="#e7a93b" stroke-width="2.5"/>
+  <path d="M400 188 l10 22 22 3 -16 16 4 22 -20 -11 -20 11 4 -22 -16 -16 22 -3 z" fill="#e7a93b"/>
+
+  <!-- chat bubble -->
+  <g>
+    <rect x="470" y="300" width="150" height="58" rx="14" fill="#121d2e" stroke="#2c4262"/>
+    <path d="M496 358 l0 22 22 -22 z" fill="#121d2e" stroke="#2c4262"/>
+    <rect x="488" y="320" width="96" height="7" rx="3.5" fill="#8da3bd"/>
+    <rect x="488" y="335" width="64" height="6" rx="3" fill="#56708f"/>
+  </g>
+
+  <text x="90" y="408" font-family="ui-monospace,monospace" font-size="16" letter-spacing="4" fill="#f2c878">AUTONOMOUS AI AGENT</text>
+  <text x="90" y="436" font-family="ui-monospace,monospace" font-size="13" letter-spacing="2" fill="#56708f">n8n · one assistant, many tasks</text>
+</svg>
