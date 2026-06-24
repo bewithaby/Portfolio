@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abhilash Emmanuel · AI Consultant, Designer & Filmmaker</title>
+<meta name="description" content="Abhilash Emmanuel, AI consultant, PMP-certified technical project manager, designer and filmmaker. 15+ years turning ambiguous problems into systems people can use.">
+<link rel="icon" href="assets/favicon.ico">
+<meta property="og:title" content="Abhilash Emmanuel · AI Consultant, Designer & Filmmaker">
+<meta property="og:description" content="Engineer's rigor, designer's eye. Fifteen years turning ambiguous problems into systems people can use, plus the occasional film and photograph.">
+<meta property="og:image" content="assets/propic.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0d1521; --ink-2:#121d2e; --ink-3:#16243a; --line:#22344b; --line-2:#2c4262;
+  --text:#e7edf5; --muted:#8da3bd; --faint:#56708f;
+  --amber:#e7a93b; --amber-soft:#f2c878; --green:#3ddc84; --teal:#2dd4bf; --coral:#ff6b4d; --blue:#4d94ff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--text);font-family:'Space Grotesk',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.mono{font-family:'JetBrains Mono',monospace}
+.wrap{max-width:1140px;margin:0 auto;padding:0 28px}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--amber);color:var(--ink)}
+img{max-width:100%;display:block}
+
+nav{position:sticky;top:0;z-index:80;background:rgba(13,21,33,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-weight:700;letter-spacing:.02em}
+.brand span{color:var(--amber)}
+.navlinks{display:flex;gap:24px}
+.navlinks a{font-size:13px;color:var(--muted);letter-spacing:.04em;transition:color .2s}
+.navlinks a:hover{color:var(--amber)}
+.cv-btn{border:1px solid var(--amber);color:var(--amber);padding:7px 16px;border-radius:6px;font-size:13px;transition:all .2s}
+.cv-btn:hover{background:var(--amber);color:var(--ink)}
+
+/* hero */
+.hero{position:relative;padding:64px 0 60px;border-bottom:1px solid var(--line);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:46px 46px;opacity:.16;mask-image:radial-gradient(circle at 75% 40%,#000,transparent 72%)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:center}
+.eyebrow{font-size:12px;letter-spacing:.22em;color:var(--amber);margin-bottom:20px;text-transform:uppercase}
+.idrow{display:flex;align-items:center;gap:16px;margin-bottom:26px}
+.av{position:relative;width:60px;height:60px;flex:none}
+.av .pic{width:60px;height:60px;border-radius:50%;background:var(--ink-3);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--faint);font-size:9px;letter-spacing:.06em;overflow:hidden;text-align:center}
+.av .pic img{width:100%;height:100%;object-fit:cover}
+.av .status{position:absolute;bottom:-2px;right:-2px;height:18px;display:flex;align-items:center;background:var(--green);color:#062b15;border:3px solid var(--ink);border-radius:20px;overflow:hidden;width:18px;transition:width .35s cubic-bezier(.5,.1,.2,1);white-space:nowrap}
+.av .status .dot{width:18px;flex:none;display:flex;align-items:center;justify-content:center}
+.av .status .dot::before{content:"";width:7px;height:7px;border-radius:50%;background:#062b15}
+.av .status .txt{font-family:'JetBrains Mono';font-size:10px;font-weight:700;letter-spacing:.04em;opacity:0;transition:opacity .25s;padding-right:12px}
+.av:hover .status{width:154px}
+.av:hover .status .txt{opacity:1;transition-delay:.12s}
+.idrow .who .nm{font-weight:500;font-size:15px}
+.idrow .who .rl{font-size:13px;color:var(--muted)}
+.hero h1{font-size:clamp(38px,5.8vw,72px);line-height:.98;font-weight:700;letter-spacing:-.02em}
+.hero h1 .dim{color:var(--faint)}
+.lede{margin-top:22px;max-width:470px;color:var(--muted);font-size:17px}
+.creed{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px 18px;font-family:'JetBrains Mono';font-size:11.5px;letter-spacing:.04em;color:var(--faint)}
+.creed span{display:inline-flex;align-items:center;gap:18px}
+.creed span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--amber);flex:none}
+.hero-cta{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono';font-size:13px;letter-spacing:.04em;padding:12px 20px;border-radius:8px;transition:all .2s;cursor:pointer;border:none}
+.btn.pri{background:var(--amber);color:var(--ink)}.btn.pri:hover{background:var(--amber-soft)}
+.btn.sec{border:1px solid var(--line);color:var(--text);background:none}.btn.sec:hover{border-color:var(--amber);color:var(--amber)}
+
+/* interactive keyboard device */
+.device{background:var(--ink-2);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 30px 60px rgba(0,0,0,.35)}
+.screen{background:var(--ink);border:1px solid var(--line);border-radius:10px;padding:22px;min-height:148px;position:relative;overflow:hidden}
+.screen::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(231,169,59,.08),transparent 60%)}
+.screen .hint{font-family:'JetBrains Mono';font-size:12px;color:var(--faint);letter-spacing:.04em}
+.screen .out{position:relative;display:flex;gap:16px;align-items:flex-start}
+.screen .big{font-family:'Space Grotesk';font-weight:700;font-size:54px;line-height:.9;color:var(--amber);min-width:48px}
+.screen .meta .k{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.16em;color:var(--amber-soft);text-transform:uppercase}
+.screen .meta .t{font-size:19px;font-weight:500;margin:2px 0 4px}
+.screen .meta .d{font-size:13.5px;color:var(--muted);max-width:280px}
+.screen .out{opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s}
+.screen.show .out{opacity:1;transform:none}
+.screen.show .hint{display:none}
+.kb{margin-top:14px;display:flex;flex-direction:column;gap:7px}
+.kb .row{display:flex;gap:7px;justify-content:center}
+.kb .key{flex:1;max-width:42px;aspect-ratio:1;border-radius:8px;background:var(--ink-3);border:1px solid var(--line);color:var(--muted);font-family:'JetBrains Mono';font-size:13px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .12s;user-select:none}
+.kb .key:hover{border-color:var(--line-2);color:var(--text)}
+.kb .key.hit{background:var(--amber);color:var(--ink);border-color:var(--amber);transform:translateY(2px);box-shadow:0 0 18px rgba(231,169,59,.5)}
+
+/* sections */
+section{padding:84px 0;border-bottom:1px solid var(--line)}
+.shead{display:flex;align-items:baseline;gap:16px;margin-bottom:42px}
+.shead .num{color:var(--amber);font-size:13px}
+.shead h2{font-size:13px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;font-weight:500}
+.shead .line{flex:1;height:1px;background:var(--line)}
+.shead .more{font-family:'JetBrains Mono';font-size:12px;color:var(--muted);transition:color .2s}
+.shead .more:hover{color:var(--amber)}
+
+/* projects */
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.pcard{background:var(--ink-2);border:1px solid var(--line);border-radius:16px;overflow:hidden;cursor:pointer;transition:transform .25s,border-color .25s;opacity:0;transform:translateY(26px)}
+.pcard.in{opacity:1;transform:none}
+.pcard:hover{transform:translateY(-6px);border-color:var(--line-2)}
+.pcard .cover{aspect-ratio:16/10;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--ink-3),var(--ink-2))}
+.pcard .cover .cov{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.pcard:hover .cover .cov{transform:scale(1.06)}
+.pcard .cover .tagrow{position:absolute;left:14px;top:14px;display:flex;gap:7px;z-index:2}
+.pcard .cover .tagrow span{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.06em;background:rgba(13,21,33,.8);border:1px solid var(--line);color:var(--amber-soft);padding:5px 9px;border-radius:20px}
+.pcard .cover .open{position:absolute;right:14px;bottom:14px;width:36px;height:36px;border-radius:50%;background:var(--amber);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:18px;opacity:0;transform:scale(.6);transition:all .25s;z-index:2}
+.pcard:hover .cover .open{opacity:1;transform:scale(1)}
+.pcard .pad{padding:18px 20px 22px}
+.pcard .pad .role{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.12em;color:var(--faint);text-transform:uppercase}
+.pcard .pad h3{font-size:23px;font-weight:500;margin:5px 0 0;letter-spacing:-.01em}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:200;display:none;align-items:flex-start;justify-content:center;padding:40px 20px;overflow-y:auto}
+.modal.open{display:flex}
+.modal .scrim{position:fixed;inset:0;background:rgba(5,9,15,.78);backdrop-filter:blur(4px);opacity:0;transition:opacity .3s}
+.modal.open .scrim{opacity:1}
+.sheet{position:relative;width:min(860px,100%);background:var(--ink-2);border:1px solid var(--line);border-radius:18px;overflow:hidden;transform:translateY(20px) scale(.98);opacity:0;transition:transform .32s cubic-bezier(.2,.8,.2,1),opacity .32s;margin:auto}
+.modal.open .sheet{transform:none;opacity:1}
+.sheet .hero-img{aspect-ratio:21/9;background:linear-gradient(135deg,var(--ink-3),#0c1726);position:relative;display:flex;align-items:flex-end;padding:24px;overflow:hidden}
+.sheet .hero-img .cov{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.sheet .hero-img .lbl{position:relative;font-family:'JetBrains Mono';font-size:12px;color:var(--faint);z-index:2}
+.sheet .close{position:absolute;top:16px;right:16px;width:38px;height:38px;border-radius:50%;background:rgba(13,21,33,.8);border:1px solid var(--line);color:var(--text);font-size:18px;cursor:pointer;z-index:3;transition:all .2s}
+.sheet .close:hover{border-color:var(--coral);color:var(--coral)}
+.sheet .content{padding:26px 30px 32px}
+.sheet .role{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.14em;color:var(--amber);text-transform:uppercase}
+.sheet h3{font-size:32px;font-weight:700;letter-spacing:-.02em;margin:6px 0 12px}
+.sheet .scope{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.sheet .scope span{font-family:'JetBrains Mono';font-size:11px;color:var(--muted);border:1px solid var(--line);padding:5px 11px;border-radius:20px}
+.sheet .desc p{color:var(--muted);font-size:15px;margin-bottom:12px}
+.sheet .desc b{color:var(--text);font-weight:500}
+.sheet .modlink{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:var(--ink);font-family:'JetBrains Mono';font-size:13px;padding:11px 20px;border-radius:8px;margin-top:6px}
+
+/* experience + education */
+.tl{position:relative;padding-left:28px}
+.tl::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:1px;background:var(--line)}
+.job{position:relative;display:grid;grid-template-columns:160px 1fr;gap:24px;padding:22px 0;border-top:1px solid var(--line)}
+.job:first-child{border-top:none}
+.job::before{content:"";position:absolute;left:-28px;top:30px;width:11px;height:11px;border-radius:50%;background:var(--ink);border:2px solid var(--faint)}
+.job.now::before{background:var(--amber);border-color:var(--amber);box-shadow:0 0 0 4px rgba(231,169,59,.16)}
+.job .when{font-family:'JetBrains Mono';font-size:13px;color:var(--faint);padding-top:3px}
+.job .co{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.job .co .lg{width:34px;height:34px;border-radius:8px;background:var(--ink-3);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono';font-size:12px;font-weight:700;color:var(--amber);flex:none;overflow:hidden}
+.job .co .lg.logo{background:#fff;padding:4px}
+.job .co .lg.logo img{width:100%;height:100%;object-fit:contain}
+.job .co .nm{font-size:20px;font-weight:500}
+.job .co .role{font-size:13px;color:var(--amber-soft)}
+.job ul{list-style:none;color:var(--muted);font-size:14px}
+.job li{padding:3px 0 3px 18px;position:relative}
+.job li::before{content:"›";position:absolute;left:0;color:var(--faint)}
+
+/* films */
+.vgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.vid{background:#000;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.vid .fr{position:relative;width:100%;aspect-ratio:16/9}
+.vid .fr iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vid .cap{display:flex;align-items:center;justify-content:space-between;padding:13px 16px}
+.vid .cap b{font-weight:500;font-size:14px}
+.vid .cap .t{font-family:'JetBrains Mono';font-size:11px;color:var(--faint)}
+.note{margin-top:18px;font-family:'JetBrains Mono';font-size:12px;color:var(--faint)}
+
+/* skills */
+.skill-cat{margin-bottom:30px}
+.skill-cat .ch{font-family:'JetBrains Mono';font-size:12px;letter-spacing:.1em;color:var(--amber);text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.skill-cat .ch::before{content:"";width:24px;height:1px;background:var(--amber)}
+.chips{display:flex;flex-wrap:wrap;gap:12px}
+.chip{display:inline-flex;align-items:center;gap:9px;background:var(--ink-2);border:1px solid var(--line);border-radius:10px;padding:11px 15px;font-size:14px;opacity:0;transform:translateY(14px) scale(.96);transition:opacity .45s ease,transform .45s ease,border-color .2s,background .2s}
+.chip.in{opacity:1;transform:none}
+.chip:hover{border-color:var(--amber);background:var(--ink-3)}
+.chip img{width:20px;height:20px}
+.chip .ph2{width:20px;height:20px;border-radius:5px;background:var(--ink-3);color:var(--amber);font-family:'JetBrains Mono';font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center}
+
+/* photography */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:148px;gap:12px}
+.shot{background:var(--ink-2);border:1px solid var(--line);border-radius:10px;display:flex;align-items:flex-end;padding:12px;color:var(--faint);font-size:11px;letter-spacing:.06em;position:relative;overflow:hidden;font-family:'JetBrains Mono';transition:transform .3s}
+.shot::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 14px,rgba(34,52,75,.5) 14px,rgba(34,52,75,.5) 15px)}
+.shot:hover{transform:translateY(-4px)}
+.shot span{position:relative;z-index:1}
+.shot.big{grid-column:span 2;grid-row:span 2}.shot.tall{grid-row:span 2}
+.gallink{margin-top:24px;display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono';font-size:13px;color:var(--amber);border:1px solid var(--amber);padding:12px 22px;border-radius:8px;transition:all .2s}
+.gallink:hover{background:var(--amber);color:var(--ink)}
+
+/* contact */
+.contact{text-align:center;padding:110px 0}
+.contact h2{font-size:clamp(34px,6vw,62px);font-weight:700;letter-spacing:-.02em;line-height:.96}
+.contact h2 span{color:var(--amber)}
+.contact p{color:var(--muted);margin:18px auto 30px;max-width:440px}
+.mail{display:inline-block;font-family:'JetBrains Mono';font-size:clamp(15px,2.4vw,20px);border-bottom:1px solid var(--amber);padding-bottom:3px;color:var(--amber)}
+.social{display:flex;gap:14px;justify-content:center;margin-top:34px;flex-wrap:wrap}
+.social a{font-family:'JetBrains Mono';font-size:12px;border:1px solid var(--line);border-radius:8px;padding:11px 18px;color:var(--muted);transition:all .2s}
+.social a:hover{border-color:var(--amber);color:var(--amber)}
+footer{padding:30px 0;text-align:center;color:var(--faint);font-size:12px;font-family:'JetBrains Mono'}
+
+@media(max-width:860px){
+  .navlinks{display:none}
+  .hero .wrap{grid-template-columns:1fr;gap:34px}
+  .pgrid{grid-template-columns:1fr}
+  .vgrid{grid-template-columns:1fr}
+  .job{grid-template-columns:1fr;gap:6px}
+  .gal{grid-template-columns:repeat(2,1fr)}.shot.big{grid-column:span 2}
+  .kb .key{max-width:34px}
+}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.001s!important;transition-duration:.06s!important}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <div class="brand mono">AE<span>.</span></div>
+  <div class="navlinks mono">
+    <a href="#projects">projects</a><a href="#experience">experience</a><a href="#education">education</a>
+    <a href="#films">films</a><a href="#skills">skills</a><a href="photography.html">photography</a><a href="#contact">contact</a>
+  </div>
+  <a href="assets/CV.pdf" target="_blank" rel="noopener" class="cv-btn mono">Get CV</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div>
+    <div class="eyebrow mono">AI Consultant · Technical PM · Designer</div>
+    <div class="idrow">
+      <div class="av" title="Open to work">
+        <div class="pic mono"><img src="assets/propic.jpg" alt="Abhilash Emmanuel"></div>
+        <div class="status"><span class="dot"></span><span class="txt">OPEN TO WORK</span></div>
+      </div>
+      <div class="who"><div class="nm">Abhilash Emmanuel</div><div class="rl mono">Wollongong, NSW</div></div>
+    </div>
+    <h1>I build<br><span class="dim">practical AI.</span></h1>
+    <p class="lede">Engineer's rigor, designer's eye. Fifteen years turning ambiguous problems into systems people can use, plus the occasional film and photograph.</p>
+    <div class="creed mono"><span>Clarity in the code</span><span>Creativity on the canvas</span><span>Value in the experience</span></div>
+    <div class="hero-cta">
+      <a href="#projects" class="btn pri mono">See the work →</a>
+      <a href="#contact" class="btn sec mono">Get in touch</a>
+    </div>
+  </div>
+
+  <div class="device" aria-label="Interactive A to Z">
+    <div class="screen" id="screen">
+      <div class="hint mono">// press any key, A&ndash;Z, to discover something about me</div>
+      <div class="out">
+        <div class="big" id="o-letter">A</div>
+        <div class="meta"><div class="k mono" id="o-kicker"></div><div class="t" id="o-title"></div><div class="d" id="o-desc"></div></div>
+      </div>
+    </div>
+    <div class="kb mono" id="kb"></div>
+  </div>
+</div></header>
+
+<section id="projects"><div class="wrap">
+  <div class="shead"><span class="num mono">01</span><h2>Recent projects</h2><div class="line"></div><span class="more mono">click to open ↗</span></div>
+  <div class="pgrid" id="pgrid">
+    <div class="pcard" data-proj="sequency">
+      <div class="cover"><img class="cov" src="assets/projects/sequency_logo.png" alt="Sequency"><div class="tagrow"><span>AI</span><span>Product</span></div><div class="open">↗</div></div>
+      <div class="pad"><div class="role mono">Founder · AI Architect</div><h3>Sequency</h3></div>
+    </div>
+    <div class="pcard" data-proj="warranty">
+      <div class="cover"><img class="cov" src="assets/projects/warranty.png" alt="Warranty Management System"><div class="tagrow"><span>n8n</span><span>Automation</span></div><div class="open">↗</div></div>
+      <div class="pad"><div class="role mono">AI Automation</div><h3>Warranty Management System</h3></div>
+    </div>
+    <div class="pcard" data-proj="assistant">
+      <div class="cover"><img class="cov" src="assets/projects/assistant.png" alt="Personal Assistant"><div class="tagrow"><span>n8n</span><span>Agent</span></div><div class="open">↗</div></div>
+      <div class="pad"><div class="role mono">AI Automation</div><h3>Personal Assistant</h3></div>
+    </div>
+    <div class="pcard" data-proj="portfolio">
+      <div class="cover"><img class="cov" src="assets/projects/portfolio.png" alt="Portfolio"><div class="tagrow"><span>Web</span><span>Design</span></div><div class="open">↗</div></div>
+      <div class="pad"><div class="role mono">Design · Front-end</div><h3>This Portfolio</h3></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+  <div class="shead"><span class="num mono">02</span><h2>Where I've worked</h2><div class="line"></div></div>
+  <div class="tl">
+    <div class="job now"><div class="when">2026 — Now</div><div><div class="co"><div class="lg">SQ</div><div><div class="nm">Sequency</div><div class="role mono">Co-founder · AI Architect</div></div></div><ul><li>Building an AI video orchestration platform from zero to one.</li><li>System design, multi-phase generation pipeline, product direction.</li></ul></div></div>
+    <div class="job now"><div class="when">2023 — Now</div><div><div class="co"><div class="lg">AI</div><div><div class="nm">Freelance &amp; Consulting</div><div class="role mono">AI Solutions Architect</div></div></div><ul><li>AI strategy, LLM/RAG/agent systems, and automation for clients.</li><li>From advisory to hands-on implementation.</li></ul></div></div>
+    <div class="job"><div class="when">2020 — 2023</div><div><div class="co"><div class="lg">AK</div><div><div class="nm">Akamai Technologies</div><div class="role mono">Technical Project Manager</div></div></div><ul><li>Led cross-functional delivery of complex technical programs.</li><li>Agile planning, risk management, predictable outcomes.</li></ul></div></div>
+    <div class="job"><div class="when">2009 — 2020</div><div><div class="co"><div class="lg">IN</div><div><div class="nm">Infosys Ltd.</div><div class="role mono">Technology Lead → Systems Engineer Trainee</div></div></div><ul><li>A decade of progression across delivery and engineering roles.</li><li>US on-site delivery in Chicago; analyst and lead positions.</li></ul></div></div>
+  </div>
+</div></section>
+
+<section id="education"><div class="wrap">
+  <div class="shead"><span class="num mono">03</span><h2>Education</h2><div class="line"></div></div>
+  <div class="tl">
+    <div class="job"><div class="when">2020 — 2022</div><div><div class="co"><div class="lg logo"><img src="assets/timeline/unomlogo.png" alt="University of Madras"></div><div><div class="nm">M.Sc. Cyber Forensics &amp; Information Security</div><div class="role mono">University of Madras</div></div></div></div></div>
+    <div class="job"><div class="when">2005 — 2009</div><div><div class="co"><div class="lg logo"><img src="assets/timeline/mglogo.png" alt="Mahatma Gandhi University"></div><div><div class="nm">B.Tech Applied Electronics &amp; Instrumentation</div><div class="role mono">Mahatma Gandhi University</div></div></div></div></div>
+  </div>
+</div></section>
+
+<section id="films"><div class="wrap">
+  <div class="shead"><span class="num mono">04</span><h2>AI films I directed</h2><div class="line"></div></div>
+  <div class="vgrid">
+    <div class="vid"><div class="fr"><iframe src="https://www.youtube-nocookie.com/embed/qTOToRxtrRI" title="Read, AI short film" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="cap"><b>Read</b><span class="t mono">AI short film · 1 min</span></div></div>
+    <div class="vid"><div class="fr"><iframe src="https://www.youtube-nocookie.com/embed/NxaVQ67XbiA" title="Despite Everything, AI short film" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="cap"><b>Despite Everything</b><span class="t mono">AI short film · visual poem</span></div></div>
+  </div>
+  <p class="note mono">// short films built end to end with generative AI · more on <a href="https://www.youtube.com/@Abhilash_Emmanuel" style="color:var(--amber)">YouTube</a></p>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <div class="shead"><span class="num mono">05</span><h2>The stack</h2><div class="line"></div></div>
+  <div class="skill-cat"><div class="ch mono">AI &amp; ML</div><div class="chips">
+    <span class="chip"><span class="ph2">AI</span>LLMs &amp; Agents</span>
+    <span class="chip"><span class="ph2">RAG</span>RAG &amp; MCP</span>
+    <span class="chip"><img data-src="python/python-original" alt="">Python</span>
+    <span class="chip"><span class="ph2">CL</span>Claude Code</span>
+    <span class="chip"><span class="ph2">CU</span>Cursor</span>
+    <span class="chip"><span class="ph2">N8</span>n8n</span>
+    <span class="chip"><span class="ph2">DF</span>Diffusion models</span>
+  </div></div>
+  <div class="skill-cat"><div class="ch mono">Engineering</div><div class="chips">
+    <span class="chip"><img data-src="typescript/typescript-original" alt="">TypeScript</span>
+    <span class="chip"><img data-src="react/react-original" alt="">React</span>
+    <span class="chip"><img data-src="nextjs/nextjs-original" alt="">Next.js</span>
+    <span class="chip"><img data-src="nodejs/nodejs-original" alt="">Node.js</span>
+    <span class="chip"><img data-src="supabase/supabase-original" alt="">Supabase</span>
+    <span class="chip"><img data-src="postgresql/postgresql-original" alt="">PostgreSQL</span>
+    <span class="chip"><img data-src="git/git-original" alt="">Git</span>
+  </div></div>
+  <div class="skill-cat"><div class="ch mono">Delivery &amp; Design</div><div class="chips">
+    <span class="chip"><span class="ph2">PM</span>PMP® / Agile</span>
+    <span class="chip"><img data-src="jira/jira-original" alt="">Jira</span>
+    <span class="chip"><img data-src="confluence/confluence-original" alt="">Confluence</span>
+    <span class="chip"><img data-src="figma/figma-original" alt="">Figma</span>
+    <span class="chip"><span class="ph2">AD</span>Adobe Suite</span>
+    <span class="chip"><span class="ph2">UX</span>UI / UX</span>
+  </div></div>
+</div></section>
+
+<section id="photo"><div class="wrap">
+  <div class="shead"><span class="num mono">06</span><h2>Through the lens</h2><div class="line"></div><a href="photography.html" class="more mono">full gallery →</a></div>
+  <div class="gal">
+    <div class="shot big"><span>featured · 01</span></div>
+    <div class="shot"><span>street</span></div>
+    <div class="shot"><span>portrait</span></div>
+    <div class="shot tall"><span>landscape</span></div>
+    <div class="shot"><span>light</span></div>
+    <div class="shot"><span>detail</span></div>
+  </div>
+  <a href="photography.html" class="gallink mono">View the full photography gallery →</a>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+  <h2>Let's build<br>something <span>good.</span></h2>
+  <p>Open to AI consulting, fractional delivery leadership, and creative collaboration.</p>
+  <a href="mailto:bewithaby@gmail.com" class="mail">bewithaby@gmail.com</a>
+  <div class="social mono">
+    <a href="https://www.linkedin.com/in/abhilash-emmanuel/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/bewithaby" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.youtube.com/@Abhilash_Emmanuel" target="_blank" rel="noopener">YouTube</a>
+    <a href="https://www.facebook.com/bewithaby" target="_blank" rel="noopener">Facebook</a>
+  </div>
+</div></section>
+
+<footer class="mono">© 2026 Abhilash Emmanuel · success is a sequence</footer>
+
+<!-- project modal -->
+<div class="modal" id="modal">
+  <div class="scrim" data-close></div>
+  <div class="sheet" role="dialog" aria-modal="true">
+    <button class="close" data-close aria-label="Close">×</button>
+    <div class="hero-img"><img class="cov" id="m-cover-img" src="" alt=""><div class="lbl mono" id="m-cover">project cover</div></div>
+    <div class="content">
+      <div class="role mono" id="m-role"></div>
+      <h3 id="m-title"></h3>
+      <div class="scope" id="m-scope"></div>
+      <div class="desc" id="m-desc"></div>
+      <a href="#" target="_blank" rel="noopener" class="modlink mono" id="m-link">View live →</a>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ---- interactive A-Z keyboard ---- */
+const AZ={
+  A:['AI','Practical AI','Building LLM and agent systems that hold up in production.'],
+  B:['Brand','Brand & identity','Visual identity, design systems and brand strategy.'],
+  C:['Cursor','AI-first dev','Shipping fast with Cursor, Claude Code and modern tooling.'],
+  D:['Design','Design','UI/UX and user-centered research, not just engineering.'],
+  E:['Enterprise','Enterprise delivery','Three years leading technical programs at Akamai.'],
+  F:['Films','AI filmmaking','Directing short films built end to end with generative AI.'],
+  G:['Generative','Generative AI','Image, video and motion with diffusion model pipelines.'],
+  H:['Hands-on','Hands-on','Strategy is good, but I still build the thing myself.'],
+  I:['Infosys','Infosys','A decade of delivery, including on-site work in Chicago.'],
+  J:['Jira','Agile delivery','Jira, Scrum and the unglamorous craft of shipping on time.'],
+  K:['Knowledge','Automation','Turning messy manual work into reliable automated systems.'],
+  L:['LLMs','LLMs, RAG & MCP','The core toolkit behind most of what I build today.'],
+  M:['M.Sc.','M.Sc.','Cyber Forensics & Information Security, University of Madras.'],
+  N:['n8n','n8n & Make','Orchestrating AI workflows without reinventing the plumbing.'],
+  O:['Orchestration','Orchestration','Coordinating many models and steps into one clean pipeline.'],
+  P:['PMP','PMP® certified','Project Management Professional. Delivery is a discipline.'],
+  Q:['Quick','Rapid prototyping','From idea to working prototype in days, not months.'],
+  R:['RAG','Retrieval','Grounding models in real data so answers stay honest.'],
+  S:['Sequency','Sequency','My AI video orchestration platform. Success is a sequence.'],
+  T:['TPM','Technical PM','Bridging engineers, designers and stakeholders.'],
+  U:['UX','UI / UX','Designing experiences people actually want to use.'],
+  V:['Visual','Visual design','Adobe Suite, brand work and a real eye for craft.'],
+  W:['Wollongong','Based in NSW','Working from Wollongong, Australia. Open to remote.'],
+  X:['X-functional','Cross-functional','Leading teams across engineering, design and product.'],
+  Y:['YouTube','On YouTube','Where my AI films and experiments live.'],
+  Z:['Zero','Zero to one','Building Sequency from a blank page to a real product.']
+};
+const rows=['QWERTYUIOP','ASDFGHJKL','ZXCVBNM'];
+const kb=document.getElementById('kb');
+rows.forEach(r=>{const d=document.createElement('div');d.className='row';[...r].forEach(ch=>{const k=document.createElement('div');k.className='key';k.textContent=ch;k.dataset.key=ch;d.appendChild(k)});kb.appendChild(d)});
+const screen=document.getElementById('screen');
+function reveal(ch){const e=AZ[ch];if(!e)return;document.getElementById('o-letter').textContent=ch;document.getElementById('o-kicker').textContent=e[0];document.getElementById('o-title').textContent=e[1];document.getElementById('o-desc').textContent=e[2];screen.classList.remove('show');void screen.offsetWidth;screen.classList.add('show');const key=kb.querySelector('[data-key="'+ch+'"]');if(key){key.classList.add('hit');setTimeout(()=>key.classList.remove('hit'),220)}}
+kb.addEventListener('click',e=>{const k=e.target.closest('.key');if(k)reveal(k.dataset.key)});
+addEventListener('keydown',e=>{const ch=e.key.toUpperCase();if(AZ[ch])reveal(ch)});
+
+/* ---- devicon lazy load ---- */
+document.querySelectorAll('.chip img[data-src]').forEach(img=>{img.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/'+img.dataset.src+'.svg';img.onerror=()=>{const ph=document.createElement('span');ph.className='ph2';ph.textContent=(img.nextSibling&&img.nextSibling.textContent||'·').trim().slice(0,2).toUpperCase();img.replaceWith(ph)}});
+
+/* ---- reveals ---- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.18});
+document.querySelectorAll('.pcard').forEach((el,i)=>{el.style.transitionDelay=(i%2*.08)+'s';io.observe(el)});
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');cio.unobserve(e.target)}}),{threshold:.4});
+document.querySelectorAll('.chip').forEach((el,i)=>{el.style.transitionDelay=((i%7)*.05)+'s';cio.observe(el)});
+
+/* ---- project modal ---- */
+const PROJ={
+  sequency:{role:'Founder · AI Architect',title:'Sequency',scope:['Next.js','Python','Lovable','Cursor','Antigravity'],cover:'assets/projects/sequency_logo.png',link:'https://sequency.cc/',
+    desc:'<p>An AI-driven video orchestration platform designed to streamline high-fidelity video production workflows.</p><p><b>The build.</b> A multi-phase orchestration pipeline that plans, generates images, then video, with continuity logic holding the sequence together.</p>'},
+  warranty:{role:'AI Automation',title:'Warranty Management System',scope:['n8n','JavaScript','HTML'],cover:'assets/projects/warranty.png',link:'https://github.com/bewithaby/Warranty-Management-System-n8n',
+    desc:'<p>A system to manage warranties efficiently using n8n workflows, turning manual tracking into reliable automation.</p>'},
+  assistant:{role:'AI Automation',title:'Personal Assistant',scope:['n8n','JavaScript','HTML'],cover:'assets/projects/assistant.png',link:'https://github.com/bewithaby/Personal-Assistant-n8n',
+    desc:'<p>An autonomous personal AI assistant built on n8n, wiring LLMs into real day-to-day workflows.</p>'},
+  portfolio:{role:'Design · Front-end',title:'This Portfolio',scope:['HTML','CSS','JavaScript'],cover:'assets/projects/portfolio.png',link:'https://github.com/bewithaby/abhilash-portfolio',
+    desc:'<p>The dark, dependency-light site you are reading now. Hand-built, no framework, no build step.</p>'}
+};
+const modal=document.getElementById('modal');
+function openProj(id){const p=PROJ[id];if(!p)return;document.getElementById('m-role').textContent=p.role;document.getElementById('m-title').textContent=p.title;document.getElementById('m-cover').textContent=p.title;const ci=document.getElementById('m-cover-img');ci.src=p.cover;ci.alt=p.title;document.getElementById('m-link').href=p.link;document.getElementById('m-scope').innerHTML=p.scope.map(s=>'<span>'+s+'</span>').join('');document.getElementById('m-desc').innerHTML=p.desc;modal.classList.add('open');document.body.style.overflow='hidden'}
+function closeProj(){modal.classList.remove('open');document.body.style.overflow=''}
+document.querySelectorAll('.pcard').forEach(c=>c.addEventListener('click',()=>openProj(c.dataset.proj)));
+modal.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click',closeProj));
+addEventListener('keydown',e=>{if(e.key==='Escape')closeProj()});
+</script>
+
+</body>
+</html>

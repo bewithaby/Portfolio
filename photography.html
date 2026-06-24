@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photography — Abhilash Emmanuel</title>
+<meta name="description" content="Photography by Abhilash Emmanuel — street, portrait and landscape work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0d1521; --ink-2:#121d2e; --ink-3:#16243a; --line:#22344b; --line-2:#2c4262;
+  --text:#e7edf5; --muted:#8da3bd; --faint:#56708f; --amber:#e7a93b; --amber-soft:#f2c878;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--text);font-family:'Space Grotesk',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+.mono{font-family:'JetBrains Mono',monospace}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--amber);color:var(--ink)}
+
+nav{position:sticky;top:0;z-index:80;background:rgba(13,21,33,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-weight:700}.brand span{color:var(--amber)}
+.back{font-family:'JetBrains Mono';font-size:13px;color:var(--muted);transition:color .2s}
+.back:hover{color:var(--amber)}
+
+.head{padding:72px 0 30px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.head::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:46px 46px;opacity:.14;mask-image:radial-gradient(circle at 80% 30%,#000,transparent 70%)}
+.head .wrap{position:relative}
+.head .eyebrow{font-family:'JetBrains Mono';font-size:12px;letter-spacing:.22em;color:var(--amber);text-transform:uppercase;margin-bottom:16px}
+.head h1{font-size:clamp(40px,7vw,80px);font-weight:700;letter-spacing:-.02em;line-height:.96}
+.head p{color:var(--muted);margin-top:18px;max-width:520px;font-size:17px}
+
+.controls{padding:26px 0;position:sticky;top:64px;z-index:40;background:rgba(13,21,33,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.controls .wrap{display:flex;gap:10px;flex-wrap:wrap}
+.cat{font-family:'JetBrains Mono';font-size:13px;border:1px solid var(--line);background:var(--ink-2);color:var(--muted);padding:9px 18px;border-radius:30px;cursor:pointer;transition:all .15s}
+.cat:hover{border-color:var(--line-2);color:var(--text)}
+.cat.on{background:var(--amber);color:var(--ink);border-color:var(--amber)}
+
+.gallery{padding:34px 0 90px}
+.cols{columns:4;column-gap:14px}
+.tile{break-inside:avoid;margin-bottom:14px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--ink-2);position:relative;cursor:pointer;transition:transform .25s,border-color .25s}
+.tile:hover{transform:translateY(-4px);border-color:var(--line-2)}
+.tile .img{position:relative;display:flex;align-items:flex-end;padding:14px;color:var(--faint);font-family:'JetBrains Mono';font-size:11px}
+.tile .img::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 15px,rgba(34,52,75,.5) 15px,rgba(34,52,75,.5) 16px)}
+.tile .img span{position:relative;z-index:1}
+.tile .meta{position:absolute;left:0;right:0;bottom:0;padding:14px;background:linear-gradient(transparent,rgba(13,21,33,.92));opacity:0;transition:opacity .25s}
+.tile:hover .meta{opacity:1}
+.tile .meta .t{font-size:14px;font-weight:500}
+.tile .meta .c{font-family:'JetBrains Mono';font-size:11px;color:var(--amber-soft)}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:30px;background:rgba(5,9,15,.9);backdrop-filter:blur(6px)}
+.lb.open{display:flex}
+.lb .box{max-width:900px;width:100%;background:var(--ink-2);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.lb .pic{aspect-ratio:3/2;position:relative;display:flex;align-items:flex-end;padding:20px;color:var(--faint);font-family:'JetBrains Mono';font-size:12px}
+.lb .pic::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 18px,rgba(34,52,75,.4) 18px,rgba(34,52,75,.4) 19px)}
+.lb .pic span{position:relative;z-index:1}
+.lb .cap{display:flex;justify-content:space-between;align-items:center;padding:16px 20px}
+.lb .cap .t{font-size:16px;font-weight:500}
+.lb .cap .c{font-family:'JetBrains Mono';font-size:12px;color:var(--amber-soft)}
+.lb .x{position:absolute;top:22px;right:22px;width:42px;height:42px;border-radius:50%;background:var(--ink-2);border:1px solid var(--line);color:var(--text);font-size:20px;cursor:pointer}
+.note{padding:0 0 70px}.note p{font-family:'JetBrains Mono';font-size:12px;color:var(--faint)}
+footer{padding:30px 0;text-align:center;color:var(--faint);font-size:12px;font-family:'JetBrains Mono';border-top:1px solid var(--line)}
+
+@media(max-width:1000px){.cols{columns:3}}
+@media(max-width:680px){.cols{columns:2}.head h1{font-size:46px}}
+@media(prefers-reduced-motion:reduce){*{transition-duration:.06s!important}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <div class="brand mono">AE<span>.</span></div>
+  <a href="index.html" class="back mono">← back to portfolio</a>
+</div></nav>
+
+<header class="head"><div class="wrap">
+  <div class="eyebrow">Photography</div>
+  <h1>Through<br>the lens.</h1>
+  <p>Off the clock, I shoot. Street, portrait and landscape work, collected here. Click any frame to enlarge.</p>
+</div></header>
+
+<div class="controls"><div class="wrap" id="cats">
+  <button class="cat on" data-cat="all">All</button>
+  <button class="cat" data-cat="street">Street</button>
+  <button class="cat" data-cat="portrait">Portrait</button>
+  <button class="cat" data-cat="landscape">Landscape</button>
+  <button class="cat" data-cat="detail">Detail</button>
+</div></div>
+
+<section class="gallery"><div class="wrap">
+  <div class="cols" id="cols"></div>
+  <div class="note"><p>// placeholder frames &mdash; replace each tile with a real photograph (WebP, lazy-loaded). Aim for a tight, curated set of 12&ndash;24 of your strongest shots.</p></div>
+</div></section>
+
+<div class="lb" id="lb">
+  <button class="x" id="lbx" aria-label="Close">×</button>
+  <div class="box"><div class="pic" id="lbpic"><span id="lblbl">frame</span></div><div class="cap"><span class="t" id="lbt">Untitled</span><span class="c mono" id="lbc">street</span></div></div>
+</div>
+
+<footer class="mono">© 2026 Abhilash Emmanuel · photography</footer>
+
+<script>
+/* sample frame data — swap for real photos */
+const FRAMES=[
+  ['street','Crossing','tall'],['portrait','Stillness',''],['landscape','Horizon','wide'],
+  ['street','Rush hour',''],['detail','Texture',''],['landscape','Valley','tall'],
+  ['portrait','Gaze',''],['street','Neon',''],['detail','Reflection','wide'],
+  ['landscape','First light','tall'],['portrait','Profile',''],['street','Alley',''],
+  ['detail','Grain',''],['landscape','Coastline','wide'],['street','Passing',''],
+  ['portrait','Candid','tall']
+];
+const heights={'':260,'tall':360,'wide':190};
+const cols=document.getElementById('cols');
+function render(filter){
+  cols.innerHTML='';
+  FRAMES.filter(f=>filter==='all'||f[0]===filter).forEach(f=>{
+    const t=document.createElement('div');t.className='tile';t.dataset.cat=f[0];
+    t.innerHTML='<div class="img" style="height:'+heights[f[2]]+'px"><span>'+f[0]+'</span></div>'+
+      '<div class="meta"><div class="t">'+f[1]+'</div><div class="c">'+f[0]+'</div></div>';
+    t.addEventListener('click',()=>openLb(f));
+    cols.appendChild(t);
+  });
+}
+render('all');
+document.getElementById('cats').addEventListener('click',e=>{
+  const b=e.target.closest('.cat');if(!b)return;
+  document.querySelectorAll('.cat').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+  render(b.dataset.cat);
+});
+const lb=document.getElementById('lb');
+function openLb(f){document.getElementById('lblbl').textContent=f[1];document.getElementById('lbt').textContent=f[1];document.getElementById('lbc').textContent=f[0];lb.classList.add('open');document.body.style.overflow='hidden'}
+function closeLb(){lb.classList.remove('open');document.body.style.overflow=''}
+document.getElementById('lbx').addEventListener('click',closeLb);
+lb.addEventListener('click',e=>{if(e.target===lb)closeLb()});
+addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
+</script>
+
+</body>
+</html>
