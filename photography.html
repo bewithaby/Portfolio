@@ -62,6 +62,10 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .lb .cap .t{font-size:16px;font-weight:500}
 .lb .cap .c{font-family:'JetBrains Mono';font-size:12px;color:var(--amber-soft)}
 .lb .x{position:absolute;top:22px;right:22px;width:42px;height:42px;border-radius:50%;background:var(--ink-2);border:1px solid var(--line);color:var(--text);font-size:20px;cursor:pointer;z-index:2}
+.lb .nav{position:absolute;top:50%;transform:translateY(-50%);width:50px;height:50px;border-radius:50%;background:var(--ink-2);border:1px solid var(--line);color:var(--text);font-size:26px;line-height:1;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.lb .nav:hover{border-color:var(--amber);color:var(--amber)}
+.lb .nav.prev{left:24px}.lb .nav.next{right:24px}
+@media(max-width:680px){.lb .nav{width:42px;height:42px;font-size:22px}.lb .nav.prev{left:10px}.lb .nav.next{right:10px}}
 footer{padding:30px 0;text-align:center;color:var(--faint);font-size:12px;font-family:'JetBrains Mono';border-top:1px solid var(--line)}
 
 @media(max-width:1000px){.cols{columns:3}}
@@ -96,6 +100,8 @@ footer{padding:30px 0;text-align:center;color:var(--faint);font-size:12px;font-f
 
 <div class="lb" id="lb">
   <button class="x" id="lbx" aria-label="Close">×</button>
+  <button class="nav prev" id="lbprev" aria-label="Previous photo">‹</button>
+  <button class="nav next" id="lbnext" aria-label="Next photo">›</button>
   <div class="box"><img id="lbimg" src="" alt=""><div class="cap"><span class="t" id="lbt">Untitled</span><span class="c mono" id="lbc"></span></div></div>
 </div>
 
@@ -104,39 +110,139 @@ footer{padding:30px 0;text-align:center;color:var(--faint);font-size:12px;font-f
 <script>
 /* [category, title, filename] */
 const FRAMES=[
-  ['land','Lake View','lake-view.jpg'],
-  ['port','Ansel','Ansel.jpg'],
-  ['land','Sea Arch','PR2.jpg'],
-  ['wild','In Flight','flight.jpg'],
-  ['macro','Water Lily','water-lily.jpg'],
-  ['land','Chicago Night','Chicago-night.jpg'],
-  ['wild','Carpenter Bee','carpenter-bee.jpg'],
-  ['port','Weathered','pure-leather.jpg'],
-  ['land','Cochin Waves','cochin-waves.jpg'],
-  ['wild','Butterfly','butterfly.jpg'],
-  ['macro','Rose','rose.jpg'],
-  ['port','Siblings','sibling.jpg'],
-  ['land','Alone in the Valley','alone-in-the-valley.jpg'],
-  ['wild','Purple-rumped Sunbird','Purple-rumped-Sunbird.jpg'],
-  ['macro','Moon','moon.jpg'],
-  ['port','Sijo','Sijo.jpg'],
-  ['wild','Take Off','take-off.jpg'],
-  ['land','Sun and Tree','sun-tree.jpg'],
-  ['macro','Crimson','red.jpg'],
-  ['port','Childhood Friends','childhood-friends.jpg'],
-  ['wild',"Honey, I'm Home",'honey-im-home.jpg'],
-  ['macro','Pattern','Pattern.jpg']
+  ['macro',"Moon",'moon.jpg'],
+  ['port',"Baby (B&W)",'Baby_bw.jpg'],
+  ['wild',"Chase for Honey",'Chase-for-Honey.jpg'],
+  ['land',"Pictured Rocks",'Pictured Rocks.jpg'],
+  ['macro',"Pattern",'Pattern.jpg'],
+  ['port',"Weathered",'pure-leather.jpg'],
+  ['wild',"Wings",'wings.jpg'],
+  ['land',"The Blushing Sun",'The-Blushing-Sun.jpg'],
+  ['macro',"Crimson",'red.jpg'],
+  ['port',"Angels And Colours",'Angels and Colours.jpg'],
+  ['wild',"Purple Rumped Sunbird",'Purple-rumped-Sunbird.jpg'],
+  ['land',"Maroon Bells",'maroon bells.jpg'],
+  ['macro',"Beauty And The Bokeh",'Beauty-and-the-Bokeh.jpg'],
+  ['port',"Sijo",'Sijo.jpg'],
+  ['wild',"Damsel",'damsel.jpg'],
+  ['land',"Miners Castle",'Miners Castle.jpg'],
+  ['macro',"White Beauty",'white-beauty.jpg'],
+  ['port',"Alone Color",'alone-color.jpg'],
+  ['wild',"Butterfly",'butterfly.jpg'],
+  ['land',"Misty",'Misty.jpg'],
+  ['macro',"Misjudged",'misjudged.jpg'],
+  ['port',"Baby's First Xmas",'Babys-First-Xmas.jpg'],
+  ['wild',"Jerdon's Leafbird",'Jerdon_s-Leafbird.jpg'],
+  ['macro',"Nymphaeaceae",'Nymphaeaceae.jpg'],
+  ['land',"Miles Apart",'Miles-Apart.jpg'],
+  ['port',"Better Half",'Better Half.jpg'],
+  ['wild',"Eye Contact",'eye-contact.jpg'],
+  ['macro',"Sublime",'sublime.jpg'],
+  ['land',"Reflection",'Relection.jpg'],
+  ['port',"Bheebha",'bheebha.jpg'],
+  ['macro',"Dew",'dew.jpg'],
+  ['wild',"Flight",'flight.jpg'],
+  ['land',"An Epic Journey",'an-epic-journey.jpg'],
+  ['port',"Boy In The Street",'boy in the street.jpg'],
+  ['macro',"Spiral",'spiral.jpg'],
+  ['wild',"Spotted Deer",'Spotted Deer.jpg'],
+  ['land',"Chicago Night",'Chicago Night.jpg'],
+  ['port',"Care",'care.jpg'],
+  ['macro',"Drinks Break",'Drinks-Break.jpg'],
+  ['wild',"Migration",'Migration.jpg'],
+  ['macro',"The Last Leaf",'The-Last-Leaf.jpg'],
+  ['port',"Childhood Friends",'Childhood Friends.jpg'],
+  ['land',"Cochin Waves",'Cochin Waves.jpg'],
+  ['wild',"Honey, I'm Home",'Honey,-I_m-Home.jpg'],
+  ['macro',"Another Curl",'Another-Curl.jpg'],
+  ['port',"Childhood",'childhood.jpg'],
+  ['land',"Reflections of Winter",'Reflections-of-winter.jpg'],
+  ['wild',"Nesting",'Nesting.jpg'],
+  ['macro',"Baklit",'baklit.jpg'],
+  ['port',"Cute",'cute.jpg'],
+  ['land',"A Ride in the Jungle",'A-ride-in-the-jungle.jpg'],
+  ['wild',"Blue Bird",'blue-bird.jpg'],
+  ['macro',"Bluish Curl",'bluish-curl.jpg'],
+  ['port',"Easter",'easter.jpg'],
+  ['land',"Alone In The Valley",'alone-in-the-valley.jpg'],
+  ['wild',"Big Family",'big-family.jpg'],
+  ['macro',"Bud1",'bud1.jpg'],
+  ['port',"Expression",'expression.jpg'],
+  ['land',"Waterfall",'CBG.jpg'],
+  ['wild',"Bird",'bird.jpg'],
+  ['macro',"Cashew",'Cashew.jpg'],
+  ['port',"Fashion3",'fashion3.jpg'],
+  ['macro',"Clipart",'clipart.jpg'],
+  ['wild',"Birdie",'birdie.jpg'],
+  ['land',"Chicago",'Chicago.jpg'],
+  ['port',"Fishing",'fishing.jpg'],
+  ['macro',"Curly",'curly.jpg'],
+  ['wild',"Catface",'catface.jpg'],
+  ['land',"Forest Hut",'Forest hut.jpg'],
+  ['port',"Getogether",'getogether.jpg'],
+  ['macro',"Dark Curls",'dark curls.jpg'],
+  ['wild',"Congregation",'congregation.jpg'],
+  ['land',"Height Of Summer",'height-of-summer.jpg'],
+  ['port',"Happy Easter",'happy easter.jpg'],
+  ['macro',"Tendril",'df.jpg'],
+  ['wild',"Duo",'duo.jpg'],
+  ['land',"In the Land of Whites",'In the land of whites.jpg'],
+  ['port',"Portrait",'kp.jpg'],
+  ['macro',"Enchanting Green",'Enchanting-Green.jpg'],
+  ['wild',"Every Dog Has A Day",'every dog has a day.jpg'],
+  ['macro',"Fallen",'fallen.jpg'],
+  ['port',"Light Sleep",'light-sleep.jpg'],
+  ['land',"Infy Hyd",'Infy-Hyd.jpg'],
+  ['wild',"Flocking Of Butterflies",'flocking of butterflies.jpg'],
+  ['macro',"Focus White",'focus white.jpg'],
+  ['port',"Looks",'looks.jpg'],
+  ['land',"Kochi",'Kochi.jpg'],
+  ['wild',"Free Bird",'Free Bird.jpg'],
+  ['macro',"Handicraft",'Handicraft.jpg'],
+  ['port',"Play Time",'play time.jpg'],
+  ['land',"Lake View",'lake view.jpg'],
+  ['macro',"Happy Valentine's Day",'Happy Valentine_s Day.jpg'],
+  ['wild',"Jurassic",'Jurassic.jpg'],
+  ['port',"Sibling",'sibling.jpg'],
+  ['land',"Morning Walk",'MorningWalk.jpg'],
+  ['macro',"New Year",'HNY.jpg'],
+  ['wild',"Lightly",'lightly.jpg'],
+  ['port',"Siblings",'siblings.jpg'],
+  ['land',"Sky Land",'sky land.jpg'],
+  ['macro',"Pepper",'Pepper.jpg'],
+  ['wild',"Preying",'preying.jpg'],
+  ['port',"Sleep With A Story",'sleep with a story.jpg'],
+  ['macro',"Shattered",'Shattered.jpg'],
+  ['land',"Skyline",'skyline.jpg'],
+  ['wild',"Shall I Come With You",'Shall I come with u.jpg'],
+  ['port',"Smile Always",'smile always.jpg'],
+  ['macro',"Strings",'Strings.jpg'],
+  ['land',"Sun Through",'sun-through.jpg'],
+  ['wild',"Synchro",'synchro.jpg'],
+  ['port',"Smiling Beauty",'smiling beauty.jpg'],
+  ['macro',"The Holy Bible",'the-holy-bible.jpg'],
+  ['land',"Sun Tree",'sun-tree.jpg'],
+  ['wild',"The Painted Bird",'The Painted Bird.jpg'],
+  ['port',"Theyyam",'theyyam.jpg'],
+  ['macro',"The Other Half",'The-Other-Half.jpg'],
+  ['land',"Hills",'wp.jpg'],
+  ['wild',"Up & Down",'up&down.jpg'],
+  ['port',"Wedding Dreams",'Wedding Dreams.jpg'],
+  ['macro',"White In The Dark",'white in the dark.jpg']
 ];
 const LABELS={land:'landscape',wild:'wildlife',port:'portrait',macro:'macro'};
 const src=f=>'assets/photography/'+encodeURIComponent(f);
 const cols=document.getElementById('cols');
+let view=[];   // currently rendered frames
+let idx=0;     // index into view of the open photo
 function render(filter){
   cols.innerHTML='';
-  FRAMES.filter(f=>filter==='all'||f[0]===filter).forEach(f=>{
+  view=FRAMES.filter(f=>filter==='all'||f[0]===filter);
+  view.forEach((f,i)=>{
     const t=document.createElement('div');t.className='tile';t.dataset.cat=f[0];
     t.innerHTML='<img loading="lazy" src="'+src(f[2])+'" alt="'+f[1]+'">'+
       '<div class="meta"><div class="t">'+f[1]+'</div><div class="c">'+LABELS[f[0]]+'</div></div>';
-    t.addEventListener('click',()=>openLb(f));
+    t.addEventListener('click',()=>openLb(i));
     cols.appendChild(t);
   });
 }
@@ -147,11 +253,20 @@ document.getElementById('cats').addEventListener('click',e=>{
   render(b.dataset.cat);
 });
 const lb=document.getElementById('lb');
-function openLb(f){const im=document.getElementById('lbimg');im.src=src(f[2]);im.alt=f[1];document.getElementById('lbt').textContent=f[1];document.getElementById('lbc').textContent=LABELS[f[0]];lb.classList.add('open');document.body.style.overflow='hidden'}
+function show(){const f=view[idx];const im=document.getElementById('lbimg');im.src=src(f[2]);im.alt=f[1];document.getElementById('lbt').textContent=f[1];document.getElementById('lbc').textContent=LABELS[f[0]];}
+function openLb(i){idx=i;show();lb.classList.add('open');document.body.style.overflow='hidden'}
 function closeLb(){lb.classList.remove('open');document.body.style.overflow=''}
+function nav(d){if(!view.length)return;idx=(idx+d+view.length)%view.length;show()}
 document.getElementById('lbx').addEventListener('click',closeLb);
+document.getElementById('lbprev').addEventListener('click',e=>{e.stopPropagation();nav(-1)});
+document.getElementById('lbnext').addEventListener('click',e=>{e.stopPropagation();nav(1)});
 lb.addEventListener('click',e=>{if(e.target===lb)closeLb()});
-addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
+addEventListener('keydown',e=>{
+  if(!lb.classList.contains('open'))return;
+  if(e.key==='Escape')closeLb();
+  else if(e.key==='ArrowRight')nav(1);
+  else if(e.key==='ArrowLeft')nav(-1);
+});
 </script>
 
 </body>
