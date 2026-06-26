@@ -38,7 +38,7 @@ img{max-width:100%;display:block}
 
 nav{position:sticky;top:0;z-index:80;background:rgba(13,21,33,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-.brand{font-weight:700}.brand span{color:var(--amber)}
+.brand{font-weight:700;color:inherit;text-decoration:none}.brand span{color:var(--amber)}
 .back{font-family:'JetBrains Mono';font-size:13px;color:var(--muted);transition:color .2s}
 .back:hover{color:var(--amber)}
 
@@ -89,7 +89,7 @@ footer{padding:30px 0;text-align:center;color:var(--faint);font-size:12px;font-f
 <body>
 
 <nav><div class="wrap">
-  <div class="brand mono">AE<span>.</span></div>
+  <a href="index.html" class="brand mono" aria-label="Home">AE<span>.</span></a>
   <a href="index.html" class="back mono">← back to portfolio</a>
 </div></nav>
 
