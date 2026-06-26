@@ -81,10 +81,13 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .btn.sec{border:1px solid var(--line);color:var(--text);background:none}.btn.sec:hover{border-color:var(--amber);color:var(--amber)}
 
 /* interactive keyboard device */
-.device{background:var(--ink-2);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 30px 60px rgba(0,0,0,.35)}
+.device{background:var(--ink-2);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 30px 60px rgba(0,0,0,.35);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.device:hover{transform:translateY(-4px) scale(1.015);box-shadow:0 42px 84px rgba(0,0,0,.45),0 0 30px rgba(231,169,59,.16)}
 .screen{background:var(--ink);border:1px solid var(--line);border-radius:10px;padding:22px;min-height:148px;position:relative;overflow:hidden}
 .screen::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(231,169,59,.08),transparent 60%)}
-.screen .hint{font-family:'JetBrains Mono';font-size:12px;color:var(--faint);letter-spacing:.04em}
+.screen .hint{font-family:'JetBrains Mono';font-size:12px;color:var(--amber-soft);letter-spacing:.04em}
+.screen .hint .cur{animation:blink 1.1s step-end infinite}
+@keyframes blink{50%{opacity:0}}
 .screen .out{position:relative;display:flex;gap:16px;align-items:flex-start}
 .screen .big{font-family:'Space Grotesk';font-weight:700;font-size:54px;line-height:.9;color:var(--amber);min-width:48px}
 .screen .meta .k{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.16em;color:var(--amber-soft);text-transform:uppercase}
@@ -96,8 +99,11 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .kb{margin-top:14px;display:flex;flex-direction:column;gap:7px}
 .kb .row{display:flex;gap:7px;justify-content:center}
 .kb .key{flex:1;max-width:42px;aspect-ratio:1;border-radius:8px;background:var(--ink-3);border:1px solid var(--line);color:var(--muted);font-family:'JetBrains Mono';font-size:13px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .12s;user-select:none}
-.kb .key:hover{border-color:var(--line-2);color:var(--text)}
+.kb .key:hover{background:rgba(231,169,59,.20);border-color:var(--amber-soft);color:var(--text);transform:translateY(-2px);box-shadow:0 4px 14px rgba(231,169,59,.22)}
 .kb .key.hit{background:var(--amber);color:var(--ink);border-color:var(--amber);transform:translateY(2px);box-shadow:0 0 18px rgba(231,169,59,.5)}
+/* attract: breathing glow, runs only while .device.playing, killed on first interaction; reduced-motion handled by global rule */
+.device.playing{animation:devBreathe 3.2s ease-in-out infinite}
+@keyframes devBreathe{0%,100%{box-shadow:0 30px 60px rgba(0,0,0,.35)}50%{box-shadow:0 30px 60px rgba(0,0,0,.35),0 0 0 1px rgba(231,169,59,.28),0 0 26px rgba(231,169,59,.16)}}
 
 /* sections */
 section{padding:84px 0;border-bottom:1px solid var(--line)}
@@ -249,9 +255,9 @@ footer{padding:30px 0;text-align:center;color:var(--faint);font-size:12px;font-f
     </div>
   </div>
 
-  <div class="device" aria-label="Interactive A to Z">
+  <div class="device playing" id="device" aria-label="Interactive A to Z keyboard, tap a key">
     <div class="screen" id="screen">
-      <div class="hint mono">// press any key, A&ndash;Z, to discover something about me</div>
+      <div class="hint mono">tap a key &middot; A&ndash;Z &middot; discover something about me <span class="cur">_</span></div>
       <div class="out">
         <div class="big" id="o-letter">A</div>
         <div class="meta"><div class="k mono" id="o-kicker"></div><div class="t" id="o-title"></div><div class="d" id="o-desc"></div></div>
@@ -424,7 +430,9 @@ const rows=['QWERTYUIOP','ASDFGHJKL','ZXCVBNM'];
 const kb=document.getElementById('kb');
 rows.forEach(r=>{const d=document.createElement('div');d.className='row';[...r].forEach(ch=>{const k=document.createElement('div');k.className='key';k.textContent=ch;k.dataset.key=ch;d.appendChild(k)});kb.appendChild(d)});
 const screen=document.getElementById('screen');
-function reveal(ch){const e=AZ[ch];if(!e)return;document.getElementById('o-letter').textContent=ch;document.getElementById('o-kicker').textContent=e[0];document.getElementById('o-title').textContent=e[1];document.getElementById('o-desc').textContent=e[2];screen.classList.remove('show');void screen.offsetWidth;screen.classList.add('show');const key=kb.querySelector('[data-key="'+ch+'"]');if(key){key.classList.add('hit');setTimeout(()=>key.classList.remove('hit'),220)}}
+const device=document.getElementById('device');
+function stopAttract(){if(device)device.classList.remove('playing')}
+function reveal(ch){const e=AZ[ch];if(!e)return;stopAttract();document.getElementById('o-letter').textContent=ch;document.getElementById('o-kicker').textContent=e[0];document.getElementById('o-title').textContent=e[1];document.getElementById('o-desc').textContent=e[2];screen.classList.remove('show');void screen.offsetWidth;screen.classList.add('show');const key=kb.querySelector('[data-key="'+ch+'"]');if(key){key.classList.add('hit');setTimeout(()=>key.classList.remove('hit'),220)}}
 kb.addEventListener('click',e=>{const k=e.target.closest('.key');if(k)reveal(k.dataset.key)});
 addEventListener('keydown',e=>{const ch=e.key.toUpperCase();if(AZ[ch])reveal(ch)});
 
