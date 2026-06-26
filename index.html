@@ -257,7 +257,7 @@ footer{padding:30px 0;text-align:center;color:var(--faint);font-size:12px;font-f
 
   <div class="device playing" id="device" aria-label="Interactive A to Z keyboard, tap a key">
     <div class="screen" id="screen">
-      <div class="hint mono">tap a key &middot; A&ndash;Z &middot; discover something about me <span class="cur">_</span></div>
+      <div class="hint mono"><span id="typed"></span><span class="cur">_</span></div>
       <div class="out">
         <div class="big" id="o-letter">A</div>
         <div class="meta"><div class="k mono" id="o-kicker"></div><div class="t" id="o-title"></div><div class="d" id="o-desc"></div></div>
@@ -356,7 +356,7 @@ footer{padding:30px 0;text-align:center;color:var(--faint);font-size:12px;font-f
     <div class="shot"><img src="assets/photography/Beauty-and-the-Bokeh.jpg" alt="Beauty and the Bokeh" loading="lazy"><span>Beauty and the Bokeh</span></div>
     <div class="shot"><img src="assets/photography/Honey%2C-I_m-Home.jpg" alt="Honey, I'm Home" loading="lazy"><span>Honey, I'm Home</span></div>
     <div class="shot"><img src="assets/photography/Cochin%20Waves.jpg" alt="Cochin Waves" loading="lazy"><span>Cochin Waves</span></div>
-    <div class="shot"><img src="assets/photography/pure-leather.jpg" alt="Weathered" loading="lazy"><span>Weathered</span></div>
+    <div class="shot"><img src="assets/photography/pure-leather.jpg" alt="Weathered" loading="lazy" style="object-position:center 18%"><span>Weathered</span></div>
     <div class="shot"><img src="assets/photography/damsel.jpg" alt="Damsel" loading="lazy"><span>Damsel</span></div>
     <div class="shot"><img src="assets/photography/maroon%20bells.jpg" alt="Maroon Bells" loading="lazy"><span>Maroon Bells</span></div>
     <div class="shot"><img src="assets/photography/moon.jpg" alt="Moon" loading="lazy"><span>Moon</span></div>
@@ -432,6 +432,10 @@ rows.forEach(r=>{const d=document.createElement('div');d.className='row';[...r].
 const screen=document.getElementById('screen');
 const device=document.getElementById('device');
 function stopAttract(){if(device)device.classList.remove('playing')}
+/* typewriter: type the hint phrase once on load */
+const typed=document.getElementById('typed'),TYPE='tap a key · A–Z · discover something about me';
+if(typed){if(matchMedia('(prefers-reduced-motion:reduce)').matches){typed.textContent=TYPE}
+else{let ti=0;(function tw(){if(ti<=TYPE.length){typed.textContent=TYPE.slice(0,ti++);setTimeout(tw,55)}})()}}
 function reveal(ch){const e=AZ[ch];if(!e)return;stopAttract();document.getElementById('o-letter').textContent=ch;document.getElementById('o-kicker').textContent=e[0];document.getElementById('o-title').textContent=e[1];document.getElementById('o-desc').textContent=e[2];screen.classList.remove('show');void screen.offsetWidth;screen.classList.add('show');const key=kb.querySelector('[data-key="'+ch+'"]');if(key){key.classList.add('hit');setTimeout(()=>key.classList.remove('hit'),220)}}
 kb.addEventListener('click',e=>{const k=e.target.closest('.key');if(k)reveal(k.dataset.key)});
 addEventListener('keydown',e=>{const ch=e.key.toUpperCase();if(AZ[ch])reveal(ch)});
