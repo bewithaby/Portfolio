@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" fill="none">
+  <defs>
+    <radialGradient id="glowU" cx="76%" cy="22%" r="64%">
+      <stop offset="0" stop-color="#e7a93b" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#e7a93b" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="gridU" width="46" height="46" patternUnits="userSpaceOnUse">
+      <path d="M46 0H0V46" stroke="#22344b" stroke-opacity="0.4" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="500" fill="#0d1521"/>
+  <rect width="800" height="500" fill="url(#gridU)"/>
+  <rect width="800" height="500" fill="url(#glowU)"/>
+
+  <!-- phone home screen frame -->
+  <rect x="118" y="70" width="564" height="284" rx="20" fill="#121d2e" stroke="#2c4262"/>
+
+  <!-- widget card 1 -->
+  <rect x="146" y="102" width="240" height="102" rx="14" fill="#16243a" stroke="#2c4262"/>
+  <text x="168" y="134" font-family="ui-monospace,monospace" font-size="13" letter-spacing="2" fill="#56708f">SYDNEY</text>
+  <text x="168" y="180" font-family="ui-monospace,monospace" font-size="38" font-weight="700" fill="#e7a93b">09:41</text>
+  <text x="330" y="180" font-family="ui-monospace,monospace" font-size="13" fill="#56708f">AEST</text>
+
+  <!-- widget card 2 -->
+  <rect x="414" y="102" width="240" height="102" rx="14" fill="#16243a" stroke="#2c4262"/>
+  <text x="436" y="134" font-family="ui-monospace,monospace" font-size="13" letter-spacing="2" fill="#56708f">LONDON</text>
+  <text x="436" y="180" font-family="ui-monospace,monospace" font-size="38" font-weight="700" fill="#8da3bd">23:41</text>
+  <text x="598" y="180" font-family="ui-monospace,monospace" font-size="13" fill="#56708f">BST</text>
+
+  <!-- widget card 3 -->
+  <rect x="146" y="222" width="240" height="102" rx="14" fill="#16243a" stroke="#2c4262"/>
+  <text x="168" y="254" font-family="ui-monospace,monospace" font-size="13" letter-spacing="2" fill="#56708f">KOCHI</text>
+  <text x="168" y="300" font-family="ui-monospace,monospace" font-size="38" font-weight="700" fill="#2dd4bf">04:11</text>
+  <text x="330" y="300" font-family="ui-monospace,monospace" font-size="13" fill="#56708f">IST</text>
+
+  <!-- widget card 4 -->
+  <rect x="414" y="222" width="240" height="102" rx="14" fill="#16243a" stroke="#2c4262"/>
+  <text x="436" y="254" font-family="ui-monospace,monospace" font-size="13" letter-spacing="2" fill="#56708f">NEW YORK</text>
+  <text x="436" y="300" font-family="ui-monospace,monospace" font-size="38" font-weight="700" fill="#8da3bd">18:41</text>
+  <text x="590" y="300" font-family="ui-monospace,monospace" font-size="13" fill="#56708f">EDT</text>
+
+  <text x="120" y="416" font-family="ui-monospace,monospace" font-size="16" letter-spacing="4" fill="#f2c878">ANDROID · WIDGET</text>
+  <text x="120" y="444" font-family="ui-monospace,monospace" font-size="13" letter-spacing="2" fill="#56708f">self-ticking · offline · no drift</text>
+</svg>

@@ -282,9 +282,9 @@ footer{padding:30px 0;text-align:center;color:var(--faint);font-size:12px;font-f
       <div class="cover"><img class="cov" src="assets/projects/cover-assistant.svg" alt="Personal Assistant"><div class="tagrow"><span>n8n</span><span>Agent</span></div><div class="open">↗</div></div>
       <div class="pad"><div class="role mono">AI Automation</div><h3>Personal Assistant</h3></div>
     </div>
-    <div class="pcard" data-proj="portfolio">
-      <div class="cover"><img class="cov" src="assets/projects/cover-portfolio.svg" alt="Portfolio"><div class="tagrow"><span>Web</span><span>Design</span></div><div class="open">↗</div></div>
-      <div class="pad"><div class="role mono">Design · Front-end</div><h3>This Portfolio</h3></div>
+    <div class="pcard" data-proj="unichrono">
+      <div class="cover"><img class="cov" src="assets/projects/cover-unichrono.svg" alt="Unichrono"><div class="tagrow"><span>Android</span><span>Kotlin</span></div><div class="open">↗</div></div>
+      <div class="pad"><div class="role mono">Product · Android</div><h3>Unichrono</h3></div>
     </div>
   </div>
 </div></section>
@@ -457,8 +457,8 @@ const PROJ={
     desc:'<p>A system to manage warranties efficiently using n8n workflows, turning manual tracking into reliable automation.</p>'},
   assistant:{role:'AI Automation',title:'Personal Assistant',scope:['n8n','JavaScript','HTML'],cover:'assets/projects/cover-assistant.svg',link:'https://github.com/bewithaby/Personal-Assistant-n8n',
     desc:'<p>An autonomous personal AI assistant built on n8n, wiring LLMs into real day-to-day workflows.</p>'},
-  portfolio:{role:'Design · Front-end',title:'This Portfolio',scope:['HTML','CSS','JavaScript'],cover:'assets/projects/cover-portfolio.svg',link:'https://github.com/bewithaby/abhilash-portfolio',
-    desc:'<p>The dark, dependency-light site you are reading now. Hand-built, no framework, no build step.</p>'}
+  unichrono:{role:'Product · Android',title:'Unichrono',scope:['Kotlin','Jetpack Compose','Glance','Room'],cover:'assets/projects/cover-unichrono.svg',link:'https://bewithaby.github.io/unichrono-site/',
+    desc:'<p>A widget-first world clock for Android, published under Spiny Valley. Several places, all their times, live on your home screen.</p><p><b>The build.</b> The category is crowded but its widgets freeze, because they refresh the time with background work that battery optimisation kills. Unichrono uses a self-ticking clock driven by the OS, so it keeps time with no process of mine running. Offline, no accounts, no tracking.</p>'}
 };
 const modal=document.getElementById('modal');
 function openProj(id){const p=PROJ[id];if(!p)return;document.getElementById('m-role').textContent=p.role;document.getElementById('m-title').textContent=p.title;document.getElementById('m-cover').textContent=p.title;const ci=document.getElementById('m-cover-img');ci.src=p.cover;ci.alt=p.title;document.getElementById('m-link').href=p.link;document.getElementById('m-scope').innerHTML=p.scope.map(s=>'<span>'+s+'</span>').join('');document.getElementById('m-desc').innerHTML=p.desc;modal.classList.add('open');document.body.style.overflow='hidden'}
