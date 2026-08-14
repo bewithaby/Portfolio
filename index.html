@@ -122,7 +122,7 @@ section{padding:84px 0;border-bottom:1px solid var(--line)}
 .pcard .cover{aspect-ratio:16/10;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--ink-3),var(--ink-2))}
 .pcard .cover .cov{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s}
 .pcard:hover .cover .cov{transform:scale(1.04)}
-.pcard .cover .tagrow{position:absolute;left:14px;top:14px;display:flex;gap:7px;z-index:2}
+.pcard .cover .tagrow{position:absolute;left:14px;right:14px;top:14px;display:flex;flex-wrap:wrap;gap:7px;z-index:2}
 .pcard .cover .tagrow span{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.06em;background:rgba(13,21,33,.8);border:1px solid var(--line);color:var(--amber-soft);padding:5px 9px;border-radius:20px}
 .pcard .cover .open{position:absolute;right:14px;bottom:14px;width:36px;height:36px;border-radius:50%;background:var(--amber);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:18px;opacity:0;transform:scale(.6);transition:all .25s;z-index:2}
 .pcard:hover .cover .open{opacity:1;transform:scale(1)}
@@ -283,7 +283,7 @@ footer{padding:30px 0;text-align:center;color:var(--faint);font-size:12px;font-f
       <div class="pad"><div class="role mono">AI Automation</div><h3>Personal Assistant</h3></div>
     </div>
     <div class="pcard" data-proj="unichrono">
-      <div class="cover"><img class="cov" src="assets/projects/cover-unichrono.svg" alt="Unichrono"><div class="tagrow"><span>Android</span><span>Kotlin</span></div><div class="open">↗</div></div>
+      <div class="cover"><img class="cov" src="assets/projects/cover-unichrono.svg" alt="Unichrono"><div class="tagrow"><span>Android</span><span>Kotlin</span><span>Google Play</span></div><div class="open">↗</div></div>
       <div class="pad"><div class="role mono">Product · Android</div><h3>Unichrono</h3></div>
     </div>
   </div>
@@ -465,11 +465,11 @@ const PROJ={
     desc:'<p>A system to manage warranties efficiently using n8n workflows, turning manual tracking into reliable automation.</p>'},
   assistant:{role:'AI Automation',title:'Personal Assistant',scope:['n8n','JavaScript','HTML'],cover:'assets/projects/cover-assistant.svg',link:'https://github.com/bewithaby/Personal-Assistant-n8n',
     desc:'<p>An autonomous personal AI assistant built on n8n, wiring LLMs into real day-to-day workflows.</p>'},
-  unichrono:{role:'Product · Android',title:'Unichrono',scope:['Kotlin','Jetpack Compose','Glance','Room'],cover:'assets/projects/cover-unichrono.svg',link:'https://bewithaby.github.io/unichrono-site/',
-    desc:'<p>A widget-first world clock for Android, published under Spiny Valley. Several places, all their times, live on your home screen.</p><p><b>The build.</b> The category is crowded but its widgets freeze, because they refresh the time with background work that battery optimisation kills. Unichrono uses a self-ticking clock driven by the OS, so it keeps time with no process of mine running. Offline, no accounts, no tracking.</p>'}
+  unichrono:{role:'Product · Android',title:'Unichrono',scope:['Kotlin','Jetpack Compose','Glance','Room'],cover:'assets/projects/cover-unichrono.svg',link:'https://play.google.com/store/apps/details?id=com.spinyvalley.unichrono',linkLabel:'Get it on Google Play →',
+    desc:'<p><b>Unichrono: World Clock Widget</b> is live on Google Play, published under Spiny Valley Labs. Several places, all their times, ticking on your home screen.</p><p><b>The build.</b> The category is crowded but its widgets freeze, because they refresh the time with background work that battery optimisation kills. Unichrono reads the system clock directly with a self-ticking widget, so it keeps time with no process of mine running, even under aggressive battery savers.</p><p><b>In the app.</b> Add the cities you care about, rename them with custom labels, switch between 12 and 24 hour formats, pick light or dark, and resize the widget to fit your layout. No ads, no internet permission, no data collection.</p>'}
 };
 const modal=document.getElementById('modal');
-function openProj(id){const p=PROJ[id];if(!p)return;document.getElementById('m-role').textContent=p.role;document.getElementById('m-title').textContent=p.title;document.getElementById('m-cover').textContent=p.title;const ci=document.getElementById('m-cover-img');ci.src=p.cover;ci.alt=p.title;document.getElementById('m-link').href=p.link;document.getElementById('m-scope').innerHTML=p.scope.map(s=>'<span>'+s+'</span>').join('');document.getElementById('m-desc').innerHTML=p.desc;modal.classList.add('open');document.body.style.overflow='hidden'}
+function openProj(id){const p=PROJ[id];if(!p)return;document.getElementById('m-role').textContent=p.role;document.getElementById('m-title').textContent=p.title;document.getElementById('m-cover').textContent=p.title;const ci=document.getElementById('m-cover-img');ci.src=p.cover;ci.alt=p.title;const ml=document.getElementById('m-link');ml.href=p.link;ml.textContent=p.linkLabel||'View live →';document.getElementById('m-scope').innerHTML=p.scope.map(s=>'<span>'+s+'</span>').join('');document.getElementById('m-desc').innerHTML=p.desc;modal.classList.add('open');document.body.style.overflow='hidden'}
 function closeProj(){modal.classList.remove('open');document.body.style.overflow=''}
 document.querySelectorAll('.pcard').forEach(c=>c.addEventListener('click',()=>openProj(c.dataset.proj)));
 modal.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click',closeProj));
