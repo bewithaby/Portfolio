@@ -150,6 +150,14 @@ section{padding:84px 0;border-bottom:1px solid var(--line)}
 .sheet .desc p{color:var(--muted);font-size:15px;margin-bottom:12px}
 .sheet .desc b{color:var(--text);font-weight:500}
 .sheet .modlink{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:var(--ink);font-family:'JetBrains Mono';font-size:13px;padding:11px 20px;border-radius:8px;margin-top:6px}
+.sheet .modlink.ghost{background:transparent;border:1px solid var(--line-2);color:var(--amber-soft)}
+.sheet .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.sheet .shots{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0 4px}
+.sheet .shots:empty{display:none}
+.sheet .shots img{width:100%;display:block;border:1px solid var(--line);border-radius:10px;background:var(--ink)}
+.sheet .shots[data-kind="phone"] img{aspect-ratio:9/16;object-fit:contain}
+.sheet .shots[data-kind="screen"] img{aspect-ratio:16/10;object-fit:cover;object-position:top}
+.sheet .shotnote{font-family:'JetBrains Mono';font-size:11px;color:var(--faint);margin:10px 0 2px}
 
 /* experience + education */
 .tl{position:relative;padding-left:28px}
@@ -221,6 +229,7 @@ footer{padding:30px 0;text-align:center;color:var(--faint);font-size:12px;font-f
   .job{grid-template-columns:1fr;gap:6px}
   .gal{grid-template-columns:repeat(2,1fr)}.shot.big{grid-column:span 2}
   .kb .key{max-width:34px}
+  .sheet .shots[data-kind="screen"]{grid-template-columns:1fr}
 }
 @media(prefers-reduced-motion:reduce){*{animation-duration:.001s!important;transition-duration:.06s!important}}
 </style>
@@ -270,8 +279,12 @@ footer{padding:30px 0;text-align:center;color:var(--faint);font-size:12px;font-f
 <section id="projects"><div class="wrap">
   <div class="shead"><span class="num mono">01</span><h2>Recent projects</h2><div class="line"></div><span class="more mono">click to open ↗</span></div>
   <div class="pgrid" id="pgrid">
+    <div class="pcard" data-proj="unichrono">
+      <div class="cover"><img class="cov" src="assets/projects/cover-unichrono.jpg" alt="Unichrono widgets and city list on a phone home screen"><div class="tagrow"><span>Android</span><span>iPhone</span><span>Live</span></div><div class="open">↗</div></div>
+      <div class="pad"><div class="role mono">Product · Mobile</div><h3>Unichrono</h3></div>
+    </div>
     <div class="pcard" data-proj="sequency">
-      <div class="cover"><img class="cov" src="assets/projects/cover-sequency.svg" alt="Sequency"><div class="tagrow"><span>AI</span><span>Product</span></div><div class="open">↗</div></div>
+      <div class="cover"><img class="cov" src="assets/projects/cover-sequency.jpg" alt="Sequency Project DNA screen with a character sheet"><div class="tagrow"><span>AI</span><span>Product</span></div><div class="open">↗</div></div>
       <div class="pad"><div class="role mono">Founder · AI Architect</div><h3>Sequency</h3></div>
     </div>
     <div class="pcard" data-proj="warranty">
@@ -281,10 +294,6 @@ footer{padding:30px 0;text-align:center;color:var(--faint);font-size:12px;font-f
     <div class="pcard" data-proj="assistant">
       <div class="cover"><img class="cov" src="assets/projects/cover-assistant.svg" alt="Personal Assistant"><div class="tagrow"><span>n8n</span><span>Agent</span></div><div class="open">↗</div></div>
       <div class="pad"><div class="role mono">AI Automation</div><h3>Personal Assistant</h3></div>
-    </div>
-    <div class="pcard" data-proj="unichrono">
-      <div class="cover"><img class="cov" src="assets/projects/cover-unichrono.svg" alt="Unichrono"><div class="tagrow"><span>Android</span><span>Kotlin</span><span>Google Play</span></div><div class="open">↗</div></div>
-      <div class="pad"><div class="role mono">Product · Android</div><h3>Unichrono</h3></div>
     </div>
   </div>
 </div></section>
@@ -322,6 +331,7 @@ footer{padding:30px 0;text-align:center;color:var(--faint);font-size:12px;font-f
     <span class="chip"><img data-src="kotlin/kotlin-original" alt="">Kotlin</span>
     <span class="chip"><img data-src="jetpackcompose/jetpackcompose-original" alt="">Jetpack Compose</span>
     <span class="chip"><img data-src="android/android-original" alt="">Android</span>
+    <span class="chip"><span class="ph2">iOS</span>iOS</span>
     <span class="chip"><span class="ph2">GL</span>Glance widgets</span>
     <span class="chip"><span class="ph2">RM</span>Room</span>
   </div></div>
@@ -330,8 +340,7 @@ footer{padding:30px 0;text-align:center;color:var(--faint);font-size:12px;font-f
 <section id="experience"><div class="wrap">
   <div class="shead"><span class="num mono">03</span><h2>Where I've worked</h2><div class="line"></div></div>
   <div class="tl">
-    <div class="job now"><div class="when">2026 — Now</div><div><div class="co"><div class="lg">SQ</div><div><div class="nm">Sequency</div><div class="role mono">Co-founder · AI Architect</div></div></div><ul><li>Building an AI video orchestration platform from zero to one.</li><li>System design, multi-phase generation pipeline, product direction.</li></ul></div></div>
-    <div class="job now"><div class="when">2023 — Now</div><div><div class="co"><div class="lg">AI</div><div><div class="nm">Freelance &amp; Consulting</div><div class="role mono">AI Solutions Architect</div></div></div><ul><li>AI strategy, LLM/RAG/agent systems, and automation for clients.</li><li>From advisory to hands-on implementation.</li></ul></div></div>
+    <div class="job now"><div class="when">2023 — Now</div><div><div class="co"><div class="lg">AI</div><div><div class="nm">Freelance &amp; Consulting</div><div class="role mono">AI Solutions Architect</div></div></div><ul><li>AI strategy, LLM/RAG/agent systems, and automation for clients.</li><li>Own products built and shipped on the side: see Sequency and Unichrono above.</li><li>From advisory to hands-on implementation.</li></ul></div></div>
     <div class="job"><div class="when">2020 — 2023</div><div><div class="co"><div class="lg">AK</div><div><div class="nm">Akamai Technologies</div><div class="role mono">Technical Project Manager</div></div></div><ul><li>Led cross-functional delivery of complex technical programs.</li><li>Agile planning, risk management, predictable outcomes.</li></ul></div></div>
     <div class="job"><div class="when">2009 — 2020</div><div><div class="co"><div class="lg">IN</div><div><div class="nm">Infosys Ltd.</div><div class="role mono">Technology Lead → Systems Engineer Trainee</div></div></div><ul><li>A decade of progression across delivery and engineering roles.</li><li>US on-site delivery in Chicago; analyst and lead positions.</li></ul></div></div>
   </div>
@@ -399,7 +408,9 @@ footer{padding:30px 0;text-align:center;color:var(--faint);font-size:12px;font-f
       <h3 id="m-title"></h3>
       <div class="scope" id="m-scope"></div>
       <div class="desc" id="m-desc"></div>
-      <a href="#" target="_blank" rel="noopener" class="modlink mono" id="m-link">View live →</a>
+      <div class="shotnote mono" id="m-shotnote"></div>
+      <div class="shots" id="m-shots"></div>
+      <div class="links" id="m-links"></div>
     </div>
   </div>
 </div>
@@ -459,17 +470,28 @@ document.querySelectorAll('.chip').forEach((el,i)=>{el.style.transitionDelay=((i
 
 /* ---- project modal ---- */
 const PROJ={
-  sequency:{role:'Founder · AI Architect',title:'Sequency',scope:['Next.js','Python','Lovable','Cursor','Antigravity'],cover:'assets/projects/cover-sequency.svg',link:'https://sequency.cc/',
-    desc:'<p>An AI-driven video orchestration platform designed to streamline high-fidelity video production workflows.</p><p><b>The build.</b> A multi-phase orchestration pipeline that plans, generates images, then video, with continuity logic holding the sequence together.</p>'},
+  unichrono:{role:'Product · Mobile',title:'Unichrono',scope:['Kotlin','Jetpack Compose','Glance','Room','iOS'],cover:'assets/projects/cover-unichrono.jpg',
+    links:[{href:'https://unichrono.app/',label:'unichrono.app →'},{href:'https://play.google.com/store/apps/details?id=com.spinyvalley.unichrono',label:'Google Play →',ghost:true},{href:'https://apps.apple.com/app/id6804218446',label:'App Store →',ghost:true}],
+    shotKind:'phone',shotNote:'// real screens: widget with custom labels, multi-city widget, the app on iPhone',
+    shots:['assets/projects/shot-unichrono-1.jpg','assets/projects/shot-unichrono-2.jpg','assets/projects/shot-unichrono-3.jpg'],
+    desc:'<p><b>Unichrono: World Clock</b> is live on Google Play and the App Store, published under Spiny Valley Labs, with its own site at unichrono.app. Several places, all their times, ticking on your home screen.</p><p><b>The build.</b> The category is crowded but its widgets freeze, because they refresh the time with background work that battery optimisation kills. Unichrono reads the system clock directly with a self-ticking widget, so it keeps time with no process of mine running, even under aggressive battery savers.</p><p><b>In the app.</b> 34,804 cities, each renamed to whatever you call it: Mom, Boss, Dev Team. Four widget styles (Two Cities, Availability, Analog, Sun Clock), a time travel slider that moves every city at once, and alarms anchored to a city clock instead of your local one. No ads, no tracking, works offline.</p>'},
+  sequency:{role:'Founder · AI Architect',title:'Sequency',scope:['Next.js','Python','Lovable','Cursor','Antigravity'],cover:'assets/projects/cover-sequency.jpg',
+    links:[{href:'https://sequency.cc/',label:'sequency.cc →'}],
+    shotKind:'screen',shotNote:'// real screens: visual direction, script ingestion, generated shot list',
+    shots:['assets/projects/shot-sequency-1.jpg','assets/projects/shot-sequency-2.jpg','assets/projects/shot-sequency-3.jpg'],
+    desc:'<p>An AI filmmaking platform that keeps a project organised, its characters consistent, and the workflow moving from script to final cut.</p><p><b>The build.</b> A multi-phase orchestration pipeline: Project DNA defines the characters, look and rules once, the script is broken into a shot list, then images and video are generated shot by shot with continuity holding the sequence together.</p>'},
   warranty:{role:'AI Automation',title:'Warranty Management System',scope:['n8n','JavaScript','HTML'],cover:'assets/projects/cover-warranty.svg',link:'https://github.com/bewithaby/Warranty-Management-System-n8n',
     desc:'<p>A system to manage warranties efficiently using n8n workflows, turning manual tracking into reliable automation.</p>'},
   assistant:{role:'AI Automation',title:'Personal Assistant',scope:['n8n','JavaScript','HTML'],cover:'assets/projects/cover-assistant.svg',link:'https://github.com/bewithaby/Personal-Assistant-n8n',
-    desc:'<p>An autonomous personal AI assistant built on n8n, wiring LLMs into real day-to-day workflows.</p>'},
-  unichrono:{role:'Product · Android',title:'Unichrono',scope:['Kotlin','Jetpack Compose','Glance','Room'],cover:'assets/projects/cover-unichrono.svg',link:'https://play.google.com/store/apps/details?id=com.spinyvalley.unichrono',linkLabel:'Get it on Google Play →',
-    desc:'<p><b>Unichrono: World Clock Widget</b> is live on Google Play, published under Spiny Valley Labs. Several places, all their times, ticking on your home screen.</p><p><b>The build.</b> The category is crowded but its widgets freeze, because they refresh the time with background work that battery optimisation kills. Unichrono reads the system clock directly with a self-ticking widget, so it keeps time with no process of mine running, even under aggressive battery savers.</p><p><b>In the app.</b> Add the cities you care about, rename them with custom labels, switch between 12 and 24 hour formats, pick light or dark, and resize the widget to fit your layout. No ads, no internet permission, no data collection.</p>'}
+    desc:'<p>An autonomous personal AI assistant built on n8n, wiring LLMs into real day-to-day workflows.</p>'}
 };
 const modal=document.getElementById('modal');
-function openProj(id){const p=PROJ[id];if(!p)return;document.getElementById('m-role').textContent=p.role;document.getElementById('m-title').textContent=p.title;document.getElementById('m-cover').textContent=p.title;const ci=document.getElementById('m-cover-img');ci.src=p.cover;ci.alt=p.title;const ml=document.getElementById('m-link');ml.href=p.link;ml.textContent=p.linkLabel||'View live →';document.getElementById('m-scope').innerHTML=p.scope.map(s=>'<span>'+s+'</span>').join('');document.getElementById('m-desc').innerHTML=p.desc;modal.classList.add('open');document.body.style.overflow='hidden'}
+function openProj(id){const p=PROJ[id];if(!p)return;document.getElementById('m-role').textContent=p.role;document.getElementById('m-title').textContent=p.title;document.getElementById('m-cover').textContent=p.title;const ci=document.getElementById('m-cover-img');ci.src=p.cover;ci.alt=p.title;
+  const links=p.links||[{href:p.link,label:p.linkLabel||'View live →'}];
+  document.getElementById('m-links').innerHTML=links.map(l=>'<a href="'+l.href+'" target="_blank" rel="noopener" class="modlink mono'+(l.ghost?' ghost':'')+'">'+l.label+'</a>').join('');
+  const sn=document.getElementById('m-shotnote');sn.textContent=p.shotNote||'';sn.style.display=p.shotNote?'block':'none';
+  const sh=document.getElementById('m-shots');sh.dataset.kind=p.shotKind||'';sh.innerHTML=(p.shots||[]).map(src=>'<img src="'+src+'" alt="'+p.title+' screenshot" loading="lazy">').join('');
+  document.getElementById('m-scope').innerHTML=p.scope.map(s=>'<span>'+s+'</span>').join('');document.getElementById('m-desc').innerHTML=p.desc;modal.classList.add('open');document.body.style.overflow='hidden'}
 function closeProj(){modal.classList.remove('open');document.body.style.overflow=''}
 document.querySelectorAll('.pcard').forEach(c=>c.addEventListener('click',()=>openProj(c.dataset.proj)));
 modal.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click',closeProj));
